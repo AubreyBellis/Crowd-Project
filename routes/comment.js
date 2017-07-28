@@ -10,14 +10,16 @@ router.get('/', (req, resp) => {
     const placeIdToFind = req.params.placeId;
 
     Places.findById(placeIdToFind).then((place) => {
-        res.render(
-            'comment/index',
-            {
-            placeId: place._id,
-            placeName: place.name,
-            comment: place.comment,
-            },
-        );
+        res.send('COMMENTS HERE!');
+        console.log('comment index test');
+        // res.render(
+        //     'comment/index',
+        //     {
+        //     placeId: place._id,
+        //     placeName: place.name,
+        //     comment: place.comment,
+        //     },
+        // );
     });
 });
 
