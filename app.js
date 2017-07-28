@@ -39,6 +39,10 @@ app.use('/', indexController);
 // const commentController = require('./routes/comment.js');
 // app.use('/places/:placeId/comment', commentController)
 
+db.once('open', function() {
+  console.log("database has been connected!");
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

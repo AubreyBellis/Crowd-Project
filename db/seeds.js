@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/Crowd-Project');
+mongoose.connect('mongodb://localhost/crowd');
 
 var Place = require('../models/place');
 var Comment = require('../models/comment');
@@ -8,9 +8,9 @@ var Comment = require('../models/comment');
 mongoose.Promise = global.Promise;
 
 // First we clear the database of existing users and items.
-// Comment.remove({}, function(err){
-//     console.log(err);
-// });
+Comment.remove({}, function(err){
+    console.log(err);
+});
 
 Place.remove({}, function(err){
     console.log(err);
@@ -23,8 +23,8 @@ var pcm = new Place({
     hours:'MONDAY-SATURDAY 10AM-9PM, SUNDAY 12PM-6PM',
     description:'fhadjfdsjkgdhgjkfghfjgkhfjkghhsdgsjkfagdksjgfklghdsjkghjjgdkgfhj',
     // averageRating: ,
-    updatedAt: Date,
-    createdAt: Date,
+    // updatedAt: Date,
+    // createdAt: Date,
     comment:[{         }]
 });
 
@@ -34,8 +34,8 @@ var clairmontLounge = new Place({
     hours:'Monday – Saturday 1PM – 3AM',
     description:'fhadjfdsjkgdhgjkfghfjgkhfjkghhsdgsjkfagdksjgfklghdsjkghjjgdkgfhj',
     // averageRating: ,
-    updatedAt: Date,
-    createdAt: Date,
+    // updatedAt: Date,
+    // createdAt: Date,
     comment:[{         }]
 });
 
@@ -45,8 +45,8 @@ var victory = new Place({
     hours:'Monday – Saturday 11AM - 2AM',
     description:'fhadjfdsjkgdhgjkfghfjgkhfjkghhsdgsjkfagdksjgfklghdsjkghjjgdkgfhj',
     // averageRating: ,
-    updatedAt: Date,
-    createdAt: Date,
+    // updatedAt: Date,
+    // createdAt: Date,
     comment:[{         }]
 });
 

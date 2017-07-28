@@ -10,17 +10,35 @@ var CommentSchema = new Schema({
     rating: Number
 });
 
+// CommentSchema.pre('save', function(next){
+//     now = new Date();
+//     this.updatedAt = now;
+//     if ( !this.createdAt ) {
+//         this.createdAt = now;
+//     }
+//     next();
+// });
+
 var PlaceSchema = new Schema({
     name: String,
     address: String,
     hours: String,
     description: String,
-    // averageRating: Number,
+    averageRating: Number,
     createdAt: Date,
     updatedAt: Date,
     comments: [CommentSchema],
     img: String,
 });
+
+// PlaceSchema.pre('save', function(next){
+//     now = new Date();
+//     this.updatedAt = now;
+//     if ( !this.createdAt ) {
+//         this.createdAt = now;
+//     }
+//     next();
+// });
 
 // var UserSchema = new Schema({
     //   name: String,
@@ -32,14 +50,14 @@ var PlaceSchema = new Schema({
 // });
 
 
-UserSchema.pre('save', function(next){
-    now = new Date();
-    this.updated_at = now;
-    if ( !this.created_at ) {
-        this.created_at = now;
-    }
-    next();
-});
+// UserSchema.pre('save', function(next){
+//     now = new Date();
+//     this.updated_at = now;
+//     if ( !this.created_at ) {
+//         this.created_at = now;
+//     }
+//     next();
+// });
 
 
 // var UserModel = mongoose.model("User", UserSchema);
