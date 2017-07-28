@@ -7,12 +7,12 @@ var Comment = require('../models/comment');
 // PLACE INDEX ROUTE
 router.get('/', (req, res) => {
   Place.find({}).then((place) => {
-    res.send('PLACES GO HERE!');
+    // res.send('PLACES GO HERE!');
     console.log('places index text');
-    // res.render(
-        // 'places/index',
-        // { place },
-        // );
+    res.render(
+        'places/index',
+        { place },
+        );
   }).catch((err) => {
     console.log('Error retrieving places from database!');
     console.log(err);

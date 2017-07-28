@@ -1,0 +1,16 @@
+<h1>PLACES LIST</h1>
+
+{{#each place}}
+    
+    <a href="/places/{{this._id}}">Show {{this.name}}</a>
+    <div>Name: {{this.name}}</div>
+    <div>Address: {{this.address}}</div>
+    <div>Hours: {{this.hours}}</div>
+    <div>Description: {{this.description}}</div>
+    <div>Comments: {{this.comment}}</div>
+    
+    </br>
+{{/each}}
+
+
+
