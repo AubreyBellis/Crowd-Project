@@ -72,8 +72,9 @@ router.get('/:id', (req, res) => {
 
   Place.findById(placeIdToSearchDbFor).then((place) => {
     console.log(place.name);
+    // res.send()
     res.render(
-        'place/show',
+        'places/show',
         {
           place,
           placeAdress: place.address

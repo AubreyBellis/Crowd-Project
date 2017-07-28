@@ -1,0 +1,25 @@
+<h1>Welcome to {{place.name}}</h1>
+
+
+{{!-- <div><img src="" alt=""></ima></div> --}}
+<div>Name: {{place.name}}</div>
+<div>Address: {{place.address}}</div>
+<div>Hours: {{place.hours}}</div>
+<div>Description: {{place.description}}</div>
+<div>Comments: {{place.comment}}</div>
+
+
+{{!-- FOR FUTURE COMMENTS
+<h2>{{place.name}}'s comments</h2>
+{{#each placeComments}}
+    <div>
+        {{this.name}}
+        <a href="/users/{{../user._id}}/items/{{this._id}}">Show Item</a>
+    </div>
+{{/each}}
+ --}}
+
+<br>
+<div>
+    <a href="/places">Back to Places</a>
+</div>

@@ -25,18 +25,20 @@ var pcm = new Place({
     // averageRating: ,
     // updatedAt: Date,
     // createdAt: Date,
-    comment:[{         }]
+    comment:[{         }],
+    image: 'http://i.imgur.com/zdXXXMot.jpg'
 });
 
-var clairmontLounge = new Place({
-    name: 'Historic Clairmont Lounge',
+var clermontLounge = new Place({
+    name: 'Historic Clermont Lounge',
     address: '789 Ponce De Leon Ave NE, Atlanta, GA 30306',
     hours:'Monday – Saturday 1PM – 3AM',
     description:'fhadjfdsjkgdhgjkfghfjgkhfjkghhsdgsjkfagdksjgfklghdsjkghjjgdkgfhj',
     // averageRating: ,
     // updatedAt: Date,
     // createdAt: Date,
-    comment:[{         }]
+    comment:[{         }],
+    image: 'http://i.imgur.com/zdXXXMo.jpg'
 });
 
 var victory = new Place({
@@ -47,7 +49,8 @@ var victory = new Place({
     // averageRating: ,
     // updatedAt: Date,
     // createdAt: Date,
-    comment:[{         }]
+    comment:[{         }], 
+    image: 'http://i.imgur.com/zdXXXMot.jpg'
 });
 
 // save the places
@@ -57,10 +60,10 @@ pcm.save(function(err) {
     console.log('PCM');
 });
 
-clairmontLounge.save(function(err) {
+clermontLounge.save(function(err) {
     if (err) console.log(err);
 
-    console.log('Clairmont Lounge');
+    console.log('Clermont Lounge');
 });
 
 victory.save(function(err) {

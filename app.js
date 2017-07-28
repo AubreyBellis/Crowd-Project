@@ -34,7 +34,7 @@ app.use('/', indexController);
 // app.use('/user', userController)
 
 const placeController = require('./routes/places.js');
-app.use('/place', placeController)
+app.use('/places', placeController)
 
 const commentController = require('./routes/comment.js');
 app.use('/places/:placeId/comment', commentController)
