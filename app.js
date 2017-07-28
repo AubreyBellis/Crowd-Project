@@ -7,12 +7,9 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 require('dotenv').config();
-mongoose.connect(process.env.MONGODB_URI); 
 
-// var index = require('./routes/index');
-// var users = require('./routes/users');
-// var comment = require('.routes/comment');
-// var places = require('.routes/places');
+mongoose.connect(process.env.MONGODB_URI); 
+var db = mongoose.connection;
 
 var app = express();
 
@@ -29,18 +26,18 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-//controllers
-// const indexController = require('./routes/index.js');
-// app.use('/', indexController);
+// controllers
+const indexController = require('./routes/index.js');
+app.use('/', indexController);
 
 // const userController = require('./routes/users.js');
 // app.use('/user', userController)
 
-const placeController = require('./routes/places.js');
-app.use('/place', placeController)
+// const placeController = require('./routes/places.js');
+// app.use('/place', placeController)
 
-const commentController = require('./routes/comment.js');
-app.use('/places/:placeId/comment', commentController)
+// const commentController = require('./routes/comment.js');
+// app.use('/places/:placeId/comment', commentController)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
