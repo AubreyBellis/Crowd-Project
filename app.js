@@ -9,17 +9,10 @@ var mongoose = require('mongoose');
 require('dotenv').config();
 mongoose.connect(process.env.MONGODB_URI); 
 
-
-
-var index = require('./routes/index');
-var users = require('./routes/users');
-
-
-
-
-
-
-
+// var index = require('./routes/index');
+// var users = require('./routes/users');
+// var comment = require('.routes/comment');
+// var places = require('.routes/places');
 
 var app = express();
 
@@ -35,8 +28,19 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
+
+//controllers
+// const indexController = require('./routes/index.js');
+// app.use('/', indexController);
+
+// const userController = require('./routes/users.js');
+// app.use('/user', userController)
+
+const placeController = require('./routes/places.js');
+app.use('/place', placeController)
+
+const commentController = require('./routes/comment.js');
+app.use('/places/:placeId/comment', commentController)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
