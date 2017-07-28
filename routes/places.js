@@ -127,16 +127,16 @@ router.get('/:id', (req, res) => {
             // });
 
 // PLACE DESTROY ROUTE
-router.get('/:id/delete', (req, res) => {
+      // router.get('/:id/delete', (req, res) => {
 
-  const placeIdToDelete = req.params.id;
+      //   const placeIdToDelete = req.params.id;
 
-  Place.findByIdAndRemove(placeIdToDelete).then(() => {
-    console.log(`Successfully deleted place with ID ${placeIdToDelete}!`);
+      //   Place.findByIdAndRemove(placeIdToDelete).then(() => {
+      //     console.log(`Successfully deleted place with ID ${placeIdToDelete}!`);
 
-    res.redirect('/places');
-  });
-});
+      //     res.redirect('/places');
+      //   });
+      // });
 
 
 module.exports = router;
