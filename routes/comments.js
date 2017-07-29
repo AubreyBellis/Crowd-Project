@@ -165,7 +165,7 @@ router.get('/:commentId/delete', (req, res) => {
             {
             placeId: place._id,
             placeName: place.name,
-            comment: place.comments,
+            comments: place.comments,
             },
         );
     }).catch((err) => {

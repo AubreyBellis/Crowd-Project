@@ -12,7 +12,8 @@
 <form action="/place/{{placeId}}/comment" method="POST">
     <div><input type="text" placeholder="User Name" name="userName"></div>
     <div><input type="text" placeholder="Title" name="title"></div>
-    <div><label for="rating">Rating: Is it empty? That's a 1. Is it super crowded? That's 5.</label></div>
+    <div><label for="rating">Rating: Is it empty? That's a 1.</div>
+    <div>Is it super crowded? That's 5.</label></div>
     <div><input type="range" min="1" max="5" placeholder="rating" name="rating"></div>
     <div><textarea id="" cols="40" rows="5" placeholder="Comment Here" name="text"></textarea></div>
     <div><input type="submit" value="Create comment">
