@@ -1,0 +1,23 @@
+<h1>Make a new rating for {{placeName}}</h1>
+
+
+    <div>Title: {{this.title}}</div>
+
+    <div>
+        <a href="/places/{{placeId}}/comment/{{this._id}}">Show Item</a>
+        <a href="/places/{{placeId}}/comment/{{this._id}}/delete">Delete Item</a>
+    </div>
+
+    <div>
+        <a href="/places/{{placeId}}">Back to {{placeName}}</a>
+    </div>
+{{/each}}
+
+<div><button><a href="/comments/new">Create a new rating</a></button></div>   
+
+
+
+<form action="/place/{{placeId}}/comment" method="POST">
+    <input type="text" placeholder="item name" name="name">
+    <input type="submit" value="Create Item">
+</form>

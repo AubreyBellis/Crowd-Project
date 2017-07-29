@@ -1,10 +1,8 @@
 <h1>{{placeName}}'s ratings</h1>
 
 {{#each comments}}
-    <div>Title: {{this.title}}</div>
-
     <div>
-        <a href="/places/{{placeId}}/comment/{{this._id}}">Show Item</a>
+        <a href="/places/{{placeId}}/comment/{{this._id}}">Show Item</a><br>
         <a href="/places/{{placeId}}/comment/{{this._id}}/delete">Delete Item</a>
     </div>
 
@@ -13,4 +11,4 @@
     </div>
 {{/each}}
 
-<div><a href="/comments/new">Create a new rating</a></div>
+<div><button><a href="/comment/new">Create a new rating</a></button></div>
