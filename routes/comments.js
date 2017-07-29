@@ -87,8 +87,12 @@ router.get('/:commentId', (req, res) => {
             {
             placeId,
             placeName: place.name,
-            commentId: foundComment._id,
-            commentName: foundComment.name,
+            // commentId: foundComment._id,
+            commentTitle: foundComment.title,
+            commentUserName: foundComment.userName,
+            commentCreatedAt: foundComment.created_at,
+            commentRating: foundComment.rating,
+            commentText: foundComment.text
             },
         );
     }).catch((err) => {
