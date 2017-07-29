@@ -76,7 +76,7 @@ var clermontLounge = new Place({
         rating: 3,
         },
     ],
-    image: 'http://i.imgur.com/zdXXXMo.jpg'
+    image:<img />
 });
 
 var victory = new Place({

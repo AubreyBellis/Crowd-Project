@@ -23,6 +23,9 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+//CSS and Images
+app.use(express.static('public/images'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
