@@ -2,12 +2,12 @@
 
 {{#each comments}}
     <div>
-        <a href="/places/{{placeId}}/comment/{{this._id}}">Show Item</a><br>
-        <a href="/places/{{placeId}}/comment/{{this._id}}/delete">Delete Item</a>
+        <a href="/places/{{placeId}}/comment/{{comment._id}}">Show Item</a><br>
+        <a href="/places/{{placeId}}/comment/{{comment._id}}/delete">Delete Item</a>
     </div>
 
     <div>
-        <a href="/places/{{placeId}}">Back to {{placeName}}</a>
+        <a href="/places/{{placeId}}">Back to {{place.name}}</a>
     </div>
 {{/each}}
 
