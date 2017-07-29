@@ -30,17 +30,16 @@ router.get('/', (req, res) => {
 // GET NEW COMMENT FORM
 router.get('/new', (req, res) => {
     const placeId = req.params.placeId;
-    const placeName = req.params.placeId;
+    // const placeName = req.params.placeId;
 
-    res.send('new comment form');
     console.log('new comment form');
-    // res.render(
-    //     'comment/new',
-    //     {
-    //       placeId,
-    //       placeName,
-    //     },
-    // );
+    res.render(
+        'comment/new',
+        {
+          placeId,
+        //   placeName: place.name
+        },
+    );
 });
 
 // CREATE (POST) NEW COMMENT
