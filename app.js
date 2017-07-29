@@ -37,7 +37,7 @@ const placeController = require('./routes/places.js');
 app.use('/places', placeController)
 
 const commentController = require('./routes/comments.js');
-app.use('/places/:placeId/comment', commentController)
+app.use('/places/:placesId/comment', commentController)
 
 db.once('open', function() {
   console.log("database has been connected!");

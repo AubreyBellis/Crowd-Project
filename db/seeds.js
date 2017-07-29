@@ -25,7 +25,26 @@ var pcm = new Place({
     // averageRating: ,
     // updatedAt: Date,
     // createdAt: Date,
-    comment:[{         }],
+    comments:[
+        {
+        userName: 'Dude',
+        title: 'too many people!',
+        text: 'Swag you probably haven\'t heard of them bitters knausgaard shabby chic pabst. Williamsburg iPhone occupy bitters, photo booth tattooed raw denim.',
+        rating: 5,
+        },
+        {
+        userName: 'Jason',
+        title: 'great place, really quiet',
+        text: 'Typewriter pork belly 8-bit synth cray taxidermy poke kickstarter adaptogen authentic chartreuse, gluten-free church-key trust fund.',
+        rating: 1,
+        },
+        {
+        userName: 'drugzNot-hugz1',
+        title: 'Alright',
+        text: 'Pitchfork heirloom austin everyday carry air plant deep v williamsburg pabst kale chips photo booth you probably haven\'t heard of them raclette.',
+        rating: 3,
+        },
+    ],
     image: 'http://i.imgur.com/zdXXXMot.jpg'
 });
 
@@ -37,7 +56,26 @@ var clermontLounge = new Place({
     // averageRating: ,
     // updatedAt: Date,
     // createdAt: Date,
-    comment:[{         }],
+    comments:[
+        {
+        userName: 'Dude',
+        title: 'too many people!',
+        text: 'Swag you probably haven\'t heard of them bitters knausgaard shabby chic pabst. Williamsburg iPhone occupy bitters, photo booth tattooed raw denim.',
+        rating: 5,
+        },
+        {
+        userName: 'Jason',
+        title: 'great place, really quiet',
+        text: 'Typewriter pork belly 8-bit synth cray taxidermy poke kickstarter adaptogen authentic chartreuse, gluten-free church-key trust fund.',
+        rating: 1,
+        },
+        {
+        userName: 'drugzNot-hugz1',
+        title: 'Alright',
+        text: 'Pitchfork heirloom austin everyday carry air plant deep v williamsburg pabst kale chips photo booth you probably haven\'t heard of them raclette.',
+        rating: 3,
+        },
+    ],
     image: 'http://i.imgur.com/zdXXXMo.jpg'
 });
 
@@ -49,7 +87,26 @@ var victory = new Place({
     // averageRating: ,
     // updatedAt: Date,
     // createdAt: Date,
-    comment:[{         }], 
+    comments:[
+        {
+        userName: 'Dude',
+        title: 'too many people!',
+        text: 'Swag you probably haven\'t heard of them bitters knausgaard shabby chic pabst. Williamsburg iPhone occupy bitters, photo booth tattooed raw denim.',
+        rating: 5,
+        },
+        {
+        userName: 'Jason',
+        title: 'great place, really quiet',
+        text: 'Typewriter pork belly 8-bit synth cray taxidermy poke kickstarter adaptogen authentic chartreuse, gluten-free church-key trust fund.',
+        rating: 1,
+        },
+        {
+        userName: 'drugzNot-hugz1',
+        title: 'Alright',
+        text: 'Pitchfork heirloom austin everyday carry air plant deep v williamsburg pabst kale chips photo booth you probably haven\'t heard of them raclette.',
+        rating: 3,
+        },
+    ],
     image: 'http://i.imgur.com/zdXXXMot.jpg'
 });
 
