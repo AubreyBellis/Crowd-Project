@@ -6,18 +6,9 @@ mongoose.Promise = global.Promise;
 var CommentSchema = new Schema({
     userName: String,
     textArea: String,
-    createdAt: Date,
+    created_at: Date,
     rating: Number
 });
-
-// CommentSchema.pre('save', function(next){
-//     now = new Date();
-//     this.updatedAt = now;
-//     if ( !this.createdAt ) {
-//         this.createdAt = now;
-//     }
-//     next();
-// });
 
 var PlaceSchema = new Schema({
     name: String,
@@ -25,38 +16,49 @@ var PlaceSchema = new Schema({
     hours: String,
     description: String,
     averageRating: Number,
-    createdAt: Date,
-    updatedAt: Date,
+    created_at: Date,
+    updated_at: Date,
     comments: [CommentSchema],
     img: String,
 });
 
-// PlaceSchema.pre('save', function(next){
-//     now = new Date();
-//     this.updatedAt = now;
-//     if ( !this.createdAt ) {
-//         this.createdAt = now;
-//     }
-//     next();
-// });
 
 // var UserSchema = new Schema({
     //   name: String,
     //   email: { type: String, required: true, unique: true },
     //   password: { type: String, required: true, unique: true },
-    //   createdAt: Date,
-    //   updatedAt: Date,
+    //   created_at: Date,
+    //   updated_at: Date,
     //   comment: [CommentSchema]
 // });
 
 
+
+// CommentSchema.pre('save', function(next){
+//   now = new Date();
+//   this.updated_at = now;
+//   if ( !this.created_at ) {
+//     this.created_at = now;
+//   }
+//   next();
+// });
+
+// PlaceSchema.pre('save', function(next){
+//   now = new Date();
+//   this.updated_at = now;
+//   if ( !this.created_at ) {
+//     this.created_at = now;
+//   }
+//   next();
+// });
+
 // UserSchema.pre('save', function(next){
-//     now = new Date();
-//     this.updated_at = now;
-//     if ( !this.created_at ) {
-//         this.created_at = now;
-//     }
-//     next();
+//   now = new Date();
+//   this.updated_at = now;
+//   if ( !this.created_at ) {
+//     this.created_at = now;
+//   }
+//   next();
 // });
 
 
