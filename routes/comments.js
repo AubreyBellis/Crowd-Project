@@ -32,13 +32,15 @@ router.get('/new', (req, res) => {
     const placeId = req.params.placeId;
     const placeName = req.params.placeId;
 
-    res.render(
-        'comment/new',
-        {
-          placeId,
-          placeName
-        },
-    );
+    res.send('new comment form');
+    console.log('new comment form');
+    // res.render(
+    //     'comment/new',
+    //     {
+    //       placeId,
+    //       placeName,
+    //     },
+    // );
 });
 
 // CREATE (POST) NEW COMMENT
@@ -81,7 +83,7 @@ router.get('/:commentId', (req, res) => {
         });
 
         res.render(
-            'items/show',
+            'comment/show',
             {
             placeId,
             placeName: place.name,
@@ -149,16 +151,18 @@ router.get('/:commentId/delete', (req, res) => {
     const commentId = req.params.commentId;
 
     Place.findById(placeId).then((place) => {
-        place.comment.id(commentId).remove();       //use Mongoose to remove the comment from the place
+        place.comments.id(commentId).remove();       //use Mongoose to remove the comment from the place
+        console.log('deleted comment');
             return place.save();                    // then save the place and return the promise so we can chain
                                                 // another .then() block and only use one .catch() block
     }).then((place) => {
+        // res.send('deleted comment');
         res.render(
             'comment/index',
             {
             placeId: place._id,
             placeName: place.name,
-            comment: place.comment,
+            comment: place.comments,
             },
         );
     }).catch((err) => {

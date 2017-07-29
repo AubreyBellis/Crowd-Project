@@ -1,17 +1,16 @@
 <h1>Make a new rating for {{placeName}}</h1>
 
 
-    <div>Title: {{this.title}}</div>
+    <div>User Name: {{comment.userName}}</div>
+    <div>Title: {{comment.title}}</div>
+    <div>Created At: {{comment.created_at}}</div>
+    <div>Rating: {{comment.rating}}</div>
+    <div>Text: {{comment.text}}</div>
 
     <div>
-        <a href="/places/{{placeId}}/comment/{{this._id}}">Show Item</a>
-        <a href="/places/{{placeId}}/comment/{{this._id}}/delete">Delete Item</a>
+        <a href="/places/{{../placeId}}">Back to {{placeName}}</a>
     </div>
 
-    <div>
-        <a href="/places/{{placeId}}">Back to {{placeName}}</a>
-    </div>
-{{/each}}
 
 <div><button><a href="/comments/new">Create a new rating</a></button></div>   
 
