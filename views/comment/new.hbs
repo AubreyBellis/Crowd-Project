@@ -9,7 +9,7 @@
 }); --}}
 
 
-<form action="/place/{{placeId}}/comment" method="POST">
+<form action="/places/{{placeId}}/comment" method="POST">
     <div><input type="text" placeholder="User Name" name="userName"></div>
     <div><input type="text" placeholder="Title" name="title"></div>
     <div><label for="rating">Rating: Is it empty? That's a 1.</div>
@@ -19,7 +19,7 @@
     <div><input type="submit" value="Create comment">
 </form>   
 
-
+<br>
     <div>
-        <a href="/places/{{../placeId}}">Back to {{placeName}}</a>
+        <a href="/places/{{placeId}}">Back to {{placeName}}</a>
     </div>

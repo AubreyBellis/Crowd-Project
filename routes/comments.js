@@ -30,24 +30,26 @@ router.get('/', (req, res) => {
 // GET NEW COMMENT FORM
 router.get('/new', (req, res) => {
     const placeId = req.params.placeId;
-    // const placeName = req.params.placeId;
+    const placeName = req.params.placeName;
 
     console.log('new comment form');
     res.render(
         'comment/new',
         {
           placeId,
-        //   placeName: place.name
+          placeName
         },
     );
 });
 
 // CREATE (POST) NEW COMMENT
 router.post('/', (req, res) => {
+    console.log("You tried to create a new item!");
     const placeId = req.params.placeId;
     const newCommentInfo = req.body;
 
     Place.findById(placeId).then((place) => {
+        console.log(newCommentInfo)
         const newComment = new Comment(newCommentInfo);
 
         place.comments.push(newComment);
@@ -55,14 +57,13 @@ router.post('/', (req, res) => {
                                             // and only end up with one .catch() block at the very end
     }).then((place) => {
         console.log('Saved new place');
-
+        // res.send('new. fucking finally');
         res.render(
-            'comment/show',
-            {
+            'comment/index',
+            { 
             placeId,
             placeName: place.name,
-            commentId: newComment._id,
-            commentTitle: newComment.title,
+            comments: place.comments
             },
         );
     }).catch((err) => {
