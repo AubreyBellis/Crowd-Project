@@ -36,7 +36,7 @@ app.use('/', indexController);
 const placeController = require('./routes/places.js');
 app.use('/places', placeController)
 
-const commentController = require('./routes/comment.js');
+const commentController = require('./routes/comments.js');
 app.use('/places/:placeId/comment', commentController)
 
 db.once('open', function() {
