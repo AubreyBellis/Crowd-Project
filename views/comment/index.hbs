@@ -1,14 +1,26 @@
-<h1>{{placeName}}'s ratings</h1>
-
+<h1>{{placeName}}'s ratings</h1><br>
+<div><button><a href="/comment/new">Create a new rating</a></button></div>
+<br>
+<br>
 {{#each comments}}
     <div>
-        <a href="/places/{{placeId}}/comment/{{comment._id}}">Show Item</a><br>
-        <a href="/places/{{placeId}}/comment/{{comment._id}}/delete">Delete Item</a>
+        <div>User Name: {{this.userName}}</div>
+        <div>Title: {{this.title}}</div>
+        <div>Created At: {{this.created_at}}</div>
+        <div>Rating: {{this.rating}}</div>
+        <div>Text: {{this.text}}</div>
+
+
+        <a href="/places/{{../placeId}}/comment/{{comment._id}}">Show Item</a><br><br>
+        <a href="/places/{{../placeId}}/comment/{{comment._id}}/delete">Delete Item</a>
     </div>
 
     <div>
-        <a href="/places/{{placeId}}">Back to {{place.name}}</a>
+        <br><br>
+        <a href="/places/{{../placeId}}">Back to {{../placeName}}</a>
     </div>
 {{/each}}
-<br>
-<div><button><a href="/comment/new">Create a new rating</a></button></div>
+<br><br>
+
+
+db.dropDatabase()

@@ -5,7 +5,8 @@ mongoose.Promise = global.Promise;
 
 var CommentSchema = new Schema({
     userName: String,
-    textArea: String,
+    title: String,
+    text: String,
     created_at: Date,
     rating: Number
 });
@@ -34,23 +35,23 @@ var PlaceSchema = new Schema({
 
 
 
-// CommentSchema.pre('save', function(next){
-//   now = new Date();
-//   this.updated_at = now;
-//   if ( !this.created_at ) {
-//     this.created_at = now;
-//   }
-//   next();
-// });
+CommentSchema.pre('save', function(next){
+  now = new Date();
+  this.updated_at = now;
+  if ( !this.created_at ) {
+    this.created_at = now;
+  }
+  next();
+});
 
-// PlaceSchema.pre('save', function(next){
-//   now = new Date();
-//   this.updated_at = now;
-//   if ( !this.created_at ) {
-//     this.created_at = now;
-//   }
-//   next();
-// });
+PlaceSchema.pre('save', function(next){
+  now = new Date();
+  this.updated_at = now;
+  if ( !this.created_at ) {
+    this.created_at = now;
+  }
+  next();
+});
 
 // UserSchema.pre('save', function(next){
 //   now = new Date();
