@@ -1,35 +1,80 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-image: url("http://i.imgur.com/pzrrANP.jpg");
+  font-family: 'Reenie Beanie', cursive;
   display: flex;
   flex-direction: column;
-  background-size: cover;
+ justify-content: center;
+ color:navy;
+ font-size: 65px;
+ opacity: 0.7;
+background-color: #000;
 }
 
 
 
-h1 {
+.h1-index {
   display:flex;
   text-align: center;
-  color:black;
+  color:whitesmoke;
   justify-content: center;
   align-content: center;
+  font-size: 200px;
+  text-decoration:unset;
+  text-decoration-style: bold;
+  
 }
+
+.body-index {
+  background: url(http://i.imgur.com/pzrrANP.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: 0.9;
+  background-color: #000;
+}
+
 p {
   display: flex;
-  align-content: flex-start;
-}
+  align-content: center;
+  justify-content: center;
+  }
 
 
 
 a:-webkit-any-link {
     color: -webkit-link;
-    cursor: auto;
+    cursor: auto; 
     text-decoration: underline;
 }
 
+
+
 button {
-position:relative;
-margin-top:100%;
+   display: inline-block; 
+   padding: .938em 1.875em;
+   border: .094em solid #743EA5; 
+   border-radius: .625em;
+   background-color:navy;
+   box-shadow: 0 .375em .313em -0.313em rgba(0,0,0,.8), inset 0 .063em rgba(255,255,255,.4), inset 0 -0.188em rgba(0,0,0,.15);
+   color: #FFF;
+   text-decoration: none;
+   text-transform: uppercase;
+   text-shadow: 0 .063em #000;
+   cursor:pointer;
+   font: bold 1.8rem sans-serif;
 }
+button:hover {
+   background-color: #8A58B7;
+   box-shadow: 0 .125em rgba(255,255,255,.4), inset 0 .063em rgba(255,255, 255,.4), inset 0 -0.188em #804FAD;
+}
+button:active {
+   box-shadow: inset 0 0 1.094em #472566, inset 0 .063em #390668, inset 0 -0.188em #682CA0, 0 .063em rgba(255,255,255,.4); 
+}
+/* html { 
+  background: url(http://i.imgur.com/pzrrANP.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+} */
