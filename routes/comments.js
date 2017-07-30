@@ -53,8 +53,8 @@ router.post('/', (req, res) => {
         const newComment = new Comment(newCommentInfo);
 
         place.comments.unshift(newComment);
-        return place.save();                // RETURN the promise from place.save() so we can chain .then() blocks
-                                            // and only end up with one .catch() block at the very end
+        return place.save();               
+
     }).then((place) => {
         console.log('Saved new place');
         // res.send('new. fucking finally');
@@ -118,8 +118,8 @@ router.get('/:commentId/edit', (req, res) => {
         res.render('comment/edit', {
         placeId,
         placeName: place.name,
-        // commentId: foundComment._id,
-        // commentTitle: foundComment.title,
+        // commentId: comment._id,
+        // commentTitle: comment.title,
         // commentUserName: foundComment.userName,
         // commentCreatedAt: foundComment.created_at,
         // commentRating: foundComment.rating,
