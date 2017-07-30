@@ -87,7 +87,7 @@ router.get('/:commentId', (req, res) => {
             {
             placeId,
             placeName: place.name,
-            // commentId: foundComment._id,
+            commentId: foundComment._id,
             commentTitle: foundComment.title,
             commentUserName: foundComment.userName,
             commentCreatedAt: foundComment.created_at,
@@ -111,12 +111,19 @@ router.get('/:commentId/edit', (req, res) => {
     
     .then((place) => {
         const foundComment = place.comments.find((comment) => {
+        console.log('finding comment by ID GET EDIT route')
         return comment._id === commentId;
         });
         // res.send('comment edit page')
         res.render('comment/edit', {
         placeId,
-        comments: foundComment,
+        placeName: place.name,
+        // commentId: foundComment._id,
+        // commentTitle: foundComment.title,
+        // commentUserName: foundComment.userName,
+        // commentCreatedAt: foundComment.created_at,
+        // commentRating: foundComment.rating,
+        // commentText: foundComment.text
         });
     });
 });
@@ -125,25 +132,23 @@ router.get('/:commentId/edit', (req, res) => {
 router.put('/:commentId', (req, res) => {
     const placeId = req.params.placeId;
     const commentId = req.params.commentId;
-    console.log('added new edit form');
 
-    Place.findById(placeId,
-    {new: true} // <-- DON'T FORGET THIS!!!
-    )
+    Place.findById(placeId)
     .then((place) => {
-        const foundComment = place.comments.find((comment) => {
-        return comment.id === commentId;
+        // const updatedCommentInfo = req.body;
+        const foundComment = place.comment.find((comment) => {
+        console.log('finding comment by ID PUT route')
+            return comment.id === commentId;
         });
 
-        foundComment.title = req.body.title;
-
+        foundComment = req.body;
         return place.save();                            // then save the place and return the promise so we can chain
                                                         // another .then() block and only use one .catch() block
     }).then((place) => {
-        console.log('updated place');
-        // res.send('updated index page')
+        console.log('updated comment');
+        // res.send('updated show page')
         res.render(
-            'comment/index',
+            'comment/show',
             {
             placeId: place._id,
             placeName: place.name,

@@ -1,12 +1,12 @@
 <h1>Update your comment for {{placeName}}</h1>
 
-<form action="/places/{{placeId}}/comment{{comment.id}}?_method=PUT" method="POST">
-    <div><input type="text" value="{{comment.userName}}" name="userName"></div>
-    <div><input type="text" value="{{comment.title}}" name="title"></div>
+<form action="/places/{{placeId}}/comment/{{commentId}}?_method=PUT" method="POST">
+    <div><input type="text" value="{{commentUserName}}" name="userName"></div>
+    <div><input type="text" value="{{commentTitle}}" name="title"></div>
     <div><label for="rating">Rating: Is it empty? It's a 1.</div>
     <div>Is it super crowded? That's 5.</label></div>
-    <div><input type="range" min="1" max="5" value="{{comment.rating}}" name="rating"></div>
-    <div><textarea id="" cols="40" rows="5" value="{{comment.text}}" name="text"></textarea></div>
+    <div><input type="range" min="1" max="5" value="{{commentRating}}" name="rating"></div>
+    <div><textarea id="" cols="40" rows="5" value="{{commentText}}" name="text"></textarea></div>
     <div><input type="submit" value="update comment">
 </form>   
 
