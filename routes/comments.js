@@ -52,7 +52,7 @@ router.post('/', (req, res) => {
         console.log(newCommentInfo)
         const newComment = new Comment(newCommentInfo);
 
-        place.comments.push(newComment);
+        place.comments.unshift(newComment);
         return place.save();                // RETURN the promise from place.save() so we can chain .then() blocks
                                             // and only end up with one .catch() block at the very end
     }).then((place) => {
@@ -105,48 +105,50 @@ router.get('/:commentId', (req, res) => {
 router.get('/:commentId/edit', (req, res) => {
     const placeId = req.params.placeId;
     const commentId = req.params.commentId;
+    console.log('get edit form');
 
     Place.findById(placeId).then((place) => {
-        const foundComment = place.comment.find((comment) => {
+        const foundComment = place.comments.find((comment) => {
         return comment.id === commentId;
         });
-
+        // res.send('comment edit page')
         res.render('comment/edit', {
         placeId,
-        comment: foundComment,
+        comments: foundComment,
         });
     });
 });
 
 // UPDATE (PUT) A COMMENT
 router.put('/:commentId', (req, res) => {
-  const placeId = req.params.placeId;
-  const commentId = req.params.commentId;
+    const placeId = req.params.placeId;
+    const commentId = req.params.commentId;
+    console.log('added new edit form');
 
-  Place.findById(placeId).then((place) => {
-    const foundComment = place.comment.find((comment) => {
-      return comment.id === commentId;
+    Place.findById(placeId).then((place) => {
+        const foundComment = place.comments.find((comment) => {
+        return comment.id === commentId;
+        });
+
+        foundComment.name = req.body.name;
+
+        return place.save();                            // then save the place and return the promise so we can chain
+                                                        // another .then() block and only use one .catch() block
+    }).then((place) => {
+        console.log('updated place');
+        res.send('updated index page')
+        // res.render(
+        //     'comment/index',
+        //     {
+        //     placeId: place._id,
+        //     placeName: place.name,
+        //     comments: place.comments,
+        //     },
+        // );
+    }).catch((err) => {
+        console.log('Failed to update comment');
+        console.log(err);
     });
-
-    foundComment.name = req.body.name;
-
-    return place.save();                            // then save the place and return the promise so we can chain
-                                                    // another .then() block and only use one .catch() block
-  }).then((place) => {
-    console.log('updated place');
-
-    res.render(
-        'comment/index',
-        {
-          placeId: place._id,
-          placeName: place.name,
-          comment: place.comment,
-        },
-    );
-  }).catch((err) => {
-    console.log('Failed to update comment');
-    console.log(err);
-  });
 });
 
 // DELETE COMMENT

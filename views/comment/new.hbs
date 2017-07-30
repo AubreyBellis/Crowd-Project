@@ -1,18 +1,10 @@
-<h1>Make a new rating for {{placeName}}</h1>
-
-{{!-- var CommentSchema = new Schema({
-    userName: String,
-    title: String,
-    text: String,
-    created_at: Date,
-    rating: Number
-}); --}}
+<h1>Make a new comment for {{placeName}}</h1>
 
 
 <form action="/places/{{placeId}}/comment" method="POST">
     <div><input type="text" placeholder="User Name" name="userName"></div>
     <div><input type="text" placeholder="Title" name="title"></div>
-    <div><label for="rating">Rating: Is it empty? That's a 1.</div>
+    <div><label for="rating">Rating: Is it empty? It's a 1.</div>
     <div>Is it super crowded? That's 5.</label></div>
     <div><input type="range" min="1" max="5" placeholder="rating" name="rating"></div>
     <div><textarea id="" cols="40" rows="5" placeholder="Comment Here" name="text"></textarea></div>
