@@ -6,7 +6,9 @@
 <div>Address: {{place.address}}</div>
 <div>Hours: {{place.hours}}</div>
 <div>Description: {{place.description}}</div>
-<div>Comments: {{place.comment}}</div>
+{{!-- <div>Comments: {{place.comment}}</div> --}}
+
+<div><a href="/places/{{place.id}}/comment">Check out {{place.name}}'s comments</a></div>
 
 
 {{!-- FOR FUTURE COMMENTS
@@ -18,8 +20,9 @@
     </div>
 {{/each}}
  --}}
-
+<br>
 <br>
 <div>
-    <a href="/places">Back to Places</a>
+    <button><a href="/places">Back to Places</a></button>
 </div>
+
