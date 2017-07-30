@@ -21,7 +21,8 @@ var pcm = new Place({
     name: 'Ponce City Market',
     address: '675 Ponce De Leon Avenue NE Atlanta, Ga 30308',
     hours:'MONDAY-SATURDAY 10AM-9PM, SUNDAY 12PM-6PM',
-    description:'fhadjfdsjkgdhgjkfghfjgkhfjkghhsdgsjkfagdksjgfklghdsjkghjjgdkgfhj',
+    description:'Ponce City Market breathes new life into the historic Sears, Roebuck & Co. building in Atlanta. The classic structure, which is the area’s largest adaptive reuse project, has been reinvented as a vibrant community hub housing the Central Food Hall, various shops, flats and offices, all while pointing back to the roots of its inception. The market infuses vigor and excitement into this historically-signiﬁcant structure, located in one of Atlanta’s most cherished neighborhoods.',
+
     // averageRating: ,
     // updatedAt: Date,
     // createdAt: Date,
@@ -45,14 +46,13 @@ var pcm = new Place({
         rating: 3,
         },
     ],
-    image: 'http://i.imgur.com/zdXXXMot.jpg'
 });
 
 var clermontLounge = new Place({
     name: 'Historic Clermont Lounge',
     address: '789 Ponce De Leon Ave NE, Atlanta, GA 30306',
     hours:'Monday – Saturday 1PM – 3AM',
-    description:'fhadjfdsjkgdhgjkfghfjgkhfjkghhsdgsjkfagdksjgfklghdsjkghjjgdkgfhj',
+    description:'THE WORLD FAMOUS CLERMONT LOUNGE IS THE GREATEST SHOW ON EARTH! A CAN’T MISS ATLANTA ATTRACTION, THE CLERMONT IS ATLANTA’S OLDEST STRIP CLUB AND CONSISTENTLY RANKED AS ONE OF THE COOLEST DIVE BARS IN THE WORLD!',
     // averageRating: ,
     // updatedAt: Date,
     // createdAt: Date,
@@ -76,14 +76,14 @@ var clermontLounge = new Place({
         rating: 3,
         },
     ],
-    image: 'http://i.imgur.com/zdXXXMo.jpg'
 });
+    
 
 var victory = new Place({
     name: 'Victory Sandwich Bar',
     address: '913 Bernina Ave NE, Atlanta, GA 30307', 
     hours:'Monday – Saturday 11AM - 2AM',
-    description:'fhadjfdsjkgdhgjkfghfjgkhfjkghhsdgsjkfagdksjgfklghdsjkghjjgdkgfhj',
+    description:'Minimalist decor, creative sandwiches sized as bar snacks, late hours, and a sleek, inviting patio.',
     // averageRating: ,
     // updatedAt: Date,
     // createdAt: Date,
