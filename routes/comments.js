@@ -107,19 +107,18 @@ router.get('/:commentId/edit', (req, res) => {
     const commentId = req.params.commentId;
     console.log('get edit form');
 
-    Place.findById(placeId)
-    
-    .then((place) => {
+    Place.findById(placeId).then((place) => {
+
         const foundComment = place.comments.find((comment) => {
-        console.log('finding comment by ID GET EDIT route')
-        return comment._id === commentId;
+        console.log('finding comment by ID EDIT route')
+        return comment.id === commentId;
         });
         // res.send('comment edit page')
         res.render('comment/edit', {
         placeId,
         placeName: place.name,
-        // commentId: comment._id,
-        // commentTitle: comment.title,
+        commentId: foundComment._id,
+        // commentTitle: foundComment.title,
         // commentUserName: foundComment.userName,
         // commentCreatedAt: foundComment.created_at,
         // commentRating: foundComment.rating,
@@ -133,17 +132,15 @@ router.put('/:commentId', (req, res) => {
     const placeId = req.params.placeId;
     const commentId = req.params.commentId;
 
-    Place.findById(placeId)
-    .then((place) => {
-        // const updatedCommentInfo = req.body;
+    Place.findById(placeId).then((place) => {
         const foundComment = place.comment.find((comment) => {
         console.log('finding comment by ID PUT route')
             return comment.id === commentId;
         });
 
-        foundComment = req.body;
-        return place.save();                            // then save the place and return the promise so we can chain
-                                                        // another .then() block and only use one .catch() block
+        let updatedComment = req.body;
+        return place.save();                           
+
     }).then((place) => {
         console.log('updated comment');
         // res.send('updated show page')
@@ -167,10 +164,10 @@ router.get('/:commentId/delete', (req, res) => {
     const commentId = req.params.commentId;
 
     Place.findById(placeId).then((place) => {
-        place.comments.id(commentId).remove();       //use Mongoose to remove the comment from the place
+        place.comments.id(commentId).remove();       
         console.log('deleted comment');
-            return place.save();                    // then save the place and return the promise so we can chain
-                                                // another .then() block and only use one .catch() block
+            return place.save();                    
+                                                
     }).then((place) => {
         // res.send('deleted comment');
         res.render(
