@@ -1,5 +1,16 @@
-<h1>{{comment.title}}</h1>
+<h1>{{placeName}}</h1><br>
+<h3>{{commentTitle}}</h3><br>
 
-<div>{{commentText}}</div>
+    <div>User Name: {{commentUserName}}</div>
+    <div>Created At: {{commentCreatedAt}}</div>
+    <div>Rating: {{commentRating}}</div>
+    <div>Text: {{commentText}}</div>
+    <br>
+     <div><a href="/places/{{placeId}}/comment/{{commentId}}/edit">Edit comment</a></div> 
 
-<div><a href="/places/{{placeId}}/comment">Back to {{placeName}}'s ratings</a></div>
+
+
+
+<br>
+<br>
+<div><a href="/places/{{placeId}}/comment">Back to {{placeName}}'s comments</a></div>

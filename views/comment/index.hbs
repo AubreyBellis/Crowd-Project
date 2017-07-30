@@ -1,14 +1,22 @@
-<h1>{{placeName}}'s ratings</h1>
-
+<h1>{{placeName}}'s comments</h1><br>
+<div><button><a href="/places/{{placeId}}/comment/new">Create a new comment</a></button></div>
+<br>
+<br>
 {{#each comments}}
     <div>
-        <a href="/places/{{placeId}}/comment/{{comment._id}}">Show Item</a><br>
-        <a href="/places/{{placeId}}/comment/{{comment._id}}/delete">Delete Item</a>
+        <div>User Name: {{this.userName}}</div>
+        <div>Title: {{this.title}}</div>
+        <div>Created At: {{this.created_at}}</div>
+        <div>Rating: {{this.rating}}</div>
+        <div>Text: {{this.text}}</div>
+        <br>
+        <div><a href="/places/{{../placeId}}/comment/{{this._id}}">Show Comment</a></div>
+        {{!-- <div><a href="/places/{{../placeId}}/comment/{{this._id}}/edit">Edit Comment</a></div> --}}
+        <div><a href="/places/{{../placeId}}/comment/{{this._id}}/delete">Delete Comment</a></div>
     </div>
-
-    <div>
-        <a href="/places/{{placeId}}">Back to {{place.name}}</a>
-    </div>
+    <br>
+    <br>
 {{/each}}
 
-<div><button><a href="/comment/new">Create a new rating</a></button></div>
+    <br>
+    <div><button><a href="/places/{{placeId}}">Back to {{placeName}}</a></button></div>

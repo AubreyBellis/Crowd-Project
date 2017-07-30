@@ -1,23 +1,18 @@
-<h1>Make a new rating for {{placeName}}</h1>
+<h1>Make a new comment for {{placeName}}</h1>
 
 
-    <div>Title: {{this.title}}</div>
+<form action="/places/{{placeId}}/comment" method="POST">
+    <div><input type="text" placeholder="User Name" name="userName"></div>
+    <div><input type="text" placeholder="Title" name="title"></div>
+    <div><label for="rating">Rating: Is it empty? It's a 1.</div>
+    <div>Is it super crowded? That's 5.</label></div>
+    <div><input type="number" min="1" max="5"></div>
+    {{!-- <div><input type="range" min="1" max="5" placeholder="rating" name="rating"></div> --}}
+    <div><textarea id="" cols="40" rows="5" style="overflow:auto; resize:none" placeholder="Comment Here" name="text"></textarea></div>
+    <div><input type="submit" value="Create comment">
+</form>   
 
+<br>
     <div>
-        <a href="/places/{{placeId}}/comment/{{this._id}}">Show Item</a>
-        <a href="/places/{{placeId}}/comment/{{this._id}}/delete">Delete Item</a>
+        <a href="/places/{{placeId}}/comment">Back to {{placeName}}</a>
     </div>
-
-    <div>
-        <a href="/places/{{placeId}}">Back to {{placeName}}</a>
-    </div>
-{{/each}}
-
-<div><button><a href="/comments/new">Create a new rating</a></button></div>   
-
-
-
-<form action="/place/{{placeId}}/comment" method="POST">
-    <input type="text" placeholder="item name" name="name">
-    <input type="submit" value="Create Item">
-</form>

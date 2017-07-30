@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var methodOverride = require('method-override');
 
 require('dotenv').config();
 
@@ -27,7 +28,7 @@ app.use(cookieParser());
 //CSS and Images
 app.use(express.static('public/images'));
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(methodOverride('_method'));
 
 // controllers
 const indexController = require('./routes/index.js');
