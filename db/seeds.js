@@ -22,7 +22,7 @@ var pcm = new Place({
     address: '675 Ponce De Leon Avenue NE Atlanta, Ga 30308',
     hours:'MONDAY-SATURDAY 10AM-9PM, SUNDAY 12PM-6PM',
     description:'Ponce City Market breathes new life into the historic Sears, Roebuck & Co. building in Atlanta. The classic structure, which is the area’s largest adaptive reuse project, has been reinvented as a vibrant community hub housing the Central Food Hall, various shops, flats and offices, all while pointing back to the roots of its inception. The market infuses vigor and excitement into this historically-signiﬁcant structure, located in one of Atlanta’s most cherished neighborhoods.',
-    image: url("http://i.imgur.com/6l74LVX.jpg"),
+
     // averageRating: ,
     // updatedAt: Date,
     // createdAt: Date,
@@ -76,7 +76,8 @@ var clermontLounge = new Place({
         rating: 3,
         },
     ],
-    image:  
+});
+    
 
 var victory = new Place({
     name: 'Victory Sandwich Bar',
