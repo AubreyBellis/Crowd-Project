@@ -107,9 +107,11 @@ router.get('/:commentId/edit', (req, res) => {
     const commentId = req.params.commentId;
     console.log('get edit form');
 
-    Place.findById(placeId).then((place) => {
+    Place.findById(placeId)
+    
+    .then((place) => {
         const foundComment = place.comments.find((comment) => {
-        return comment.id === commentId;
+        return comment._id === commentId;
         });
         // res.send('comment edit page')
         res.render('comment/edit', {
@@ -125,26 +127,29 @@ router.put('/:commentId', (req, res) => {
     const commentId = req.params.commentId;
     console.log('added new edit form');
 
-    Place.findById(placeId).then((place) => {
+    Place.findById(placeId,
+    {new: true} // <-- DON'T FORGET THIS!!!
+    )
+    .then((place) => {
         const foundComment = place.comments.find((comment) => {
         return comment.id === commentId;
         });
 
-        foundComment.name = req.body.name;
+        foundComment.title = req.body.title;
 
         return place.save();                            // then save the place and return the promise so we can chain
                                                         // another .then() block and only use one .catch() block
     }).then((place) => {
         console.log('updated place');
-        res.send('updated index page')
-        // res.render(
-        //     'comment/index',
-        //     {
-        //     placeId: place._id,
-        //     placeName: place.name,
-        //     comments: place.comments,
-        //     },
-        // );
+        // res.send('updated index page')
+        res.render(
+            'comment/index',
+            {
+            placeId: place._id,
+            placeName: place.name,
+            comments: place.comments,
+            },
+        );
     }).catch((err) => {
         console.log('Failed to update comment');
         console.log(err);
