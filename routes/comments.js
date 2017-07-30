@@ -118,11 +118,11 @@ router.get('/:commentId/edit', (req, res) => {
         placeId,
         placeName: place.name,
         commentId: foundComment._id,
-        // commentTitle: foundComment.title,
-        // commentUserName: foundComment.userName,
-        // commentCreatedAt: foundComment.created_at,
-        // commentRating: foundComment.rating,
-        // commentText: foundComment.text
+        commentTitle: foundComment.title,
+        commentUserName: foundComment.userName,
+        commentCreatedAt: foundComment.created_at,
+        commentRating: foundComment.rating,
+        commentText: foundComment.text
         });
     });
 });
@@ -131,14 +131,22 @@ router.get('/:commentId/edit', (req, res) => {
 router.put('/:commentId', (req, res) => {
     const placeId = req.params.placeId;
     const commentId = req.params.commentId;
+    var foundComment;
+    console.log(`You want to update comment: ${commentId}`)
 
     Place.findById(placeId).then((place) => {
-        const foundComment = place.comment.find((comment) => {
+        foundComment = place.comments.find((comment) => {
         console.log('finding comment by ID PUT route')
             return comment.id === commentId;
         });
 
-        let updatedComment = req.body;
+        foundComment._id = req.body._id;
+        foundComment.title = req.body.title;
+        foundComment.userName = req.body.userName;
+        foundComment.text = req.body.text;
+        foundComment.rating = req.body.rating;
+        
+
         return place.save();                           
 
     }).then((place) => {
@@ -147,9 +155,14 @@ router.put('/:commentId', (req, res) => {
         res.render(
             'comment/show',
             {
-            placeId: place._id,
+            placeId,
             placeName: place.name,
-            comments: place.comments,
+            commentId: foundComment._id,
+            commentTitle: foundComment.title,
+            commentUserName: foundComment.userName,
+            commentCreatedAt: foundComment.created_at,
+            commentRating: foundComment.rating,
+            commentText: foundComment.text
             },
         );
     }).catch((err) => {
