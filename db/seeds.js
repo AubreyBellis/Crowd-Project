@@ -82,7 +82,7 @@ var victory = new Place({
     name: 'Victory Sandwich Bar',
     address: '913 Bernina Ave NE, Atlanta, GA 30307', 
     hours:'Monday – Saturday 11AM - 2AM',
-    description:'fhadjfdsjkgdhgjkfghfjgkhfjkghhsdgsjkfagdksjgfklghdsjkghjjgdkgfhj',
+    description:'Minimalist decor, creative sandwiches sized as bar snacks, late hours, and a sleek, inviting patio.',
     // averageRating: ,
     // updatedAt: Date,
     // createdAt: Date,
