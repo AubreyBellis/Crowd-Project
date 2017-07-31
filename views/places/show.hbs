@@ -6,14 +6,18 @@
 
 <h1>Welcome to {{place.name}}</h1>
 
-{{!-- <div><img src="" alt=""></ima></div> --}}
-<div>Name: {{place.name}}</div>
+<blockquote>{{!-- <div><img src="" alt=""></ima></div> --}}
 <div>Address: {{place.address}}</div>
+<br>
 <div>Hours: {{place.hours}}</div>
+<br>
 <div>Description: {{place.description}}</div>
+<br>
+<div><img src='{{place.image}}'></div>
+</blockquote>
 {{!-- <div>Comments: {{place.comment}}</div> --}}
 
-<div><a href="/places/{{place.id}}/comment"><button class="btn">Check out {{place.name}}'s comments</button></a></div>
+<div><a href="/places/{{place.id}}/comment"><button class="btn">{{place.name}}'s comments</button></a></div>
 
 
 {{!-- FOR FUTURE COMMENTS
