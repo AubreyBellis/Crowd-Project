@@ -15,29 +15,9 @@
         </li>
     </ul>
 </nav>
-    {{!-- <a href="/places/{{placeId}}"><div id="back-btn"><button class="btn">Back to {{placeName}}</button></div></a> --}}
+            {{!-- <a href="/places/{{placeId}}"><div id="back-btn"><button class="btn">Back to {{placeName}}</button></div></a> --}}
     <div id="login-btn"><button class="btn">log in</button><button class="btn">sign up</button></div>
 </header>
-
-
-{{!-- <nav id="primary_nav_wrap">
-<ul>
-    <li class="current-menu-item"><a href="#">Menu</a>
-        <ul>
-            <li class="dir"><a href="/">HOME</a></li>
-            <li class="dir"><a href="/places">PLACE INDEX</a>
-                <ul>
-                    <li><a href="/places/{{placeId}}">PLACE</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-</ul>
-</nav> --}}
-
-
-
 
 
 
@@ -53,14 +33,14 @@
     <div class="card">
         <div id="comment-rating">{{this.rating}}</div>
         <div id="comment-title"><a href="/places/{{../placeId}}/comment/{{this._id}}">{{this.title}}</a></div>
-        <div>User Name: {{this.userName}}</div>
-        {{!-- <div id="comment-created">{{this.created_at}}</div> --}}
+        <div>{{this.userName}}</div>
+                {{!-- <div id="comment-created">{{this.created_at}}</div> --}}
     <div class="card-container">    
         <div>{{this.text}}</div>
         <br>
-        {{!-- <div><a href="/places/{{../placeId}}/comment/{{this._id}}">Show Comment</a></div> --}}
-        {{!-- <div><a href="/places/{{../placeId}}/comment/{{this._id}}/edit">Edit Comment</a></div> --}}
-        {{!-- <div><a href="/places/{{../placeId}}/comment/{{this._id}}/delete">Delete Comment</a></div> --}}
+                {{!-- <div><a href="/places/{{../placeId}}/comment/{{this._id}}">Show Comment</a></div> --}}
+                {{!-- <div><a href="/places/{{../placeId}}/comment/{{this._id}}/edit">Edit Comment</a></div> --}}
+                {{!-- <div><a href="/places/{{../placeId}}/comment/{{this._id}}/delete">Delete Comment</a></div> --}}
     </div> {{!-- class="card-containter" --}}
     </div>{{!-- class="card" --}}
 
@@ -69,7 +49,6 @@
 {{/each}}
 <br>
 <br>
-<div id="new-comment-btn"><a href="/places/{{placeId}}/comment/new"><button class="btn">leave a comment</button></a></div>
 </div> {{!-- class="main-comments" --}}
   <br>
   <br>
