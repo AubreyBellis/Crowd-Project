@@ -8,7 +8,8 @@
 <h1 class='place-title'>PLACES LIST</h1>
 
 {{#each place}}
-    <div class='places-show'>
+    <div class='card-places'>
+        <div class="container">
     <a href="/places/{{this._id}}">{{this.name}}</a>
     <br><br>
     <div>Address: {{this.address}}</div>
@@ -19,9 +20,16 @@
     <div>Description: {{this.description}}</div>
     </blockquote>
     <br>
-    <div>{{this.image}}</div>
+    <div><img src='{{this.image}}'></div>
     </br>
     </div>
+        </div>
 {{/each}}
-
+{{!-- <div class="card">
+  <img src="img_avatar.png" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>John Doe</b></h4> 
+    <p>Architect & Engineer</p> 
+  </div>
+</div> --}}
 
