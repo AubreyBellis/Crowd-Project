@@ -8,20 +8,19 @@
 <h1 class='place-title'>PLACES LIST</h1>
 
 {{#each place}}
-    <div class='card-places'>
+    <div class='card1'>
         <div class="container">
     <a href="/places/{{this._id}}">{{this.name}}</a>
+    <br>
+    <div><img src='{{this.image}}'></div>
+    </br>
     <br><br>
     <div>Address: {{this.address}}</div>
     <br>
     <div>Hours: {{this.hours}}</div>
     <br>
-    <blockquote>
     <div>Description: {{this.description}}</div>
-    </blockquote>
-    <br>
-    <div><img src='{{this.image}}'></div>
-    </br>
+     <br>
     </div>
         </div>
 {{/each}}
