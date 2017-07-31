@@ -5,16 +5,23 @@
 </header>
 
 
-<h1>PLACES LIST</h1>
+<h1 class='place-title'>PLACES LIST</h1>
 
 {{#each place}}
-    
-    <a href="/places/{{this._id}}">Show {{this.name}}</a>
-    <div>Name: {{this.name}}</div>
+    <div class='places-show'>
+    <a href="/places/{{this._id}}">{{this.name}}</a>
+    <br><br>
     <div>Address: {{this.address}}</div>
+    <br>
     <div>Hours: {{this.hours}}</div>
+    <br>
+    <blockquote>
     <div>Description: {{this.description}}</div>
+    </blockquote>
+    <br>
     <div>{{this.image}}</div>
     </br>
+    </div>
 {{/each}}
+
 
