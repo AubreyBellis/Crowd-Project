@@ -24,14 +24,14 @@ var PlaceSchema = new Schema({
 });
 
 
-// var UserSchema = new Schema({
-    //   name: String,
-    //   email: { type: String, required: true, unique: true },
-    //   password: { type: String, required: true, unique: true },
-    //   created_at: Date,
-    //   updated_at: Date,
-    //   comment: [CommentSchema]
-// });
+var UserSchema = new Schema({
+      name: String,
+      email: { type: String, required: true, unique: true },
+      password: { type: String, required: true, unique: true },
+      created_at: Date,
+      updated_at: Date,
+      comment: [CommentSchema]
+});
 
 
 
@@ -53,22 +53,22 @@ PlaceSchema.pre('save', function(next){
   next();
 });
 
-// UserSchema.pre('save', function(next){
-//   now = new Date();
-//   this.updated_at = now;
-//   if ( !this.created_at ) {
-//     this.created_at = now;
-//   }
-//   next();
-// });
+UserSchema.pre('save', function(next){
+  now = new Date();
+  this.updated_at = now;
+  if ( !this.created_at ) {
+    this.created_at = now;
+  }
+  next();
+});
 
 
-// var UserModel = mongoose.model("User", UserSchema);
+var UserModel = mongoose.model("User", UserSchema);
 var PlaceModel = mongoose.model("Place", PlaceSchema);
 var CommentModel = mongoose.model("Comment", CommentSchema);
 
 module.exports = {
-    // User: UserModel,
+    User: UserModel,
     Place: PlaceModel,
     Comment: CommentModel
 };

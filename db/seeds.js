@@ -3,6 +3,7 @@ mongoose.connect('mongodb://localhost/crowd');
 
 var Place = require('../models/place');
 var Comment = require('../models/comment');
+var User = require('../models/user');
 
 // Use native promises
 mongoose.Promise = global.Promise;
@@ -16,6 +17,9 @@ Place.remove({}, function(err){
     console.log(err);
 });
 
+User.remove({}, function(err){
+    console.log(err);
+});
 // create new places
 var pcm = new Place({
     name: 'Ponce City Market',
@@ -127,6 +131,44 @@ victory.save(function(err) {
     if (err) console.log(err);
     
     console.log('Victory!');
+});
+
+// create new users
+var danny = new User({
+  first_name: 'Danny',
+  email: 'danny@gmail.com',
+  items: []
+});
+
+var maren = new User({
+  first_name: 'Maren',
+  email: 'maren@gmail.com',
+  items: [{ name: "Get dry cleaning" }]
+});
+
+var diesel = new User({
+  first_name: 'Diesel',
+  email: 'diesel@gmail.com',
+  items: [{ name: "Go to the dog park" }, { name: "Go to the cat park" }]
+});
+
+// save the users
+danny.save(function(err) {
+  if (err) console.log(err);
+
+  console.log('danny created!');
+});
+
+maren.save(function(err) {
+  if (err) console.log(err);
+
+  console.log('maren created!');
+});
+
+diesel.save(function(err) {
+  if (err) console.log(err);
+  
+  console.log('diesel created!');
 });
 
 mongoose.connection.close();
