@@ -138,41 +138,41 @@ victory.save(function(err) {
 });
 
 // create new users
-var kris = new User({
-  first_name: 'Kris',
-  email: 'kris@gmail.com',
-  items: [{ name: "Code some code" }]
-});
+// var kris = new User({
+//   first_name: 'Kris',
+//   email: 'kris@gmail.com',
+//   items: [{ name: "Code some code" }]
+// });
 
-var jessica = new User({
-  first_name: 'Jessica',
-  email: 'Jessica@gmail.com',
-  items: [{ name: "Get dry cleaning" }]
-});
+// var jessica = new User({
+//   first_name: 'Jessica',
+//   email: 'Jessica@gmail.com',
+//   items: [{ name: "Get dry cleaning" }]
+// });
 
-var aubrey = new User({
-  first_name: 'Aubrey',
-  email: 'Aubrey@gmail.com',
-  items: [{ name: "Go to the dog park" }, { name: "Go to the cat park" }]
-});
+// var aubrey = new User({
+//   first_name: 'Aubrey',
+//   email: 'Aubrey@gmail.com',
+//   items: [{ name: "Go to the dog park" }, { name: "Go to the cat park" }]
+// });
 
 // save the users
-kris.save(function(err) {
-  if (err) console.log(err);
+// kris.save(function(err) {
+//   if (err) console.log(err);
 
-  console.log('Kris created!');
-});
+//   console.log('Kris created!');
+// });
 
-jessica.save(function(err) {
-  if (err) console.log(err);
+// jessica.save(function(err) {
+//   if (err) console.log(err);
 
-  console.log('Jessica created!');
-});
+//   console.log('Jessica created!');
+// });
 
-aubrey.save(function(err) {
-  if (err) console.log(err);
+// aubrey.save(function(err) {
+//   if (err) console.log(err);
   
-  console.log('Aubrey created!');
-});
+//   console.log('Aubrey created!');
+// });
 
 mongoose.connection.close();

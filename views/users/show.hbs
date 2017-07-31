@@ -1,7 +1,9 @@
-<h1>User {{user._id}}</h1>
+<h1>User {{user.first_name}} {{user.last_name}}</h1>
 
-<div>Name: {{user.first_name}}</div>
+<div>First Name: {{user.first_name}}</div>
+<div>Last Name: {{user.last_name}}</div>
 <div>Email: {{user.email}}</div>
+<div>Created At: {{user.created_at}}</div>
 
 <h2>{{user.first_name}}'s Items</h2>
 {{#each userItems}}
