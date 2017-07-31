@@ -1,3 +1,10 @@
+<header class="header">
+    {{!-- <h5>{{title}}</h5> --}}
+    <div id="back-button"><button class="btn"><a href="/places/{{placeId}}/comment">Back to {{placeName}}'s comments</a></button></div>
+    <div id="login-buttons"><button class="btn">log in</button><button class="btn">sign up</button></div>
+</header>
+
+
 <h1>{{placeName}}</h1><br>
 <h3>{{commentTitle}}</h3><br>
 
@@ -6,7 +13,8 @@
     <div>Rating: {{commentRating}}</div>
     <div>Text: {{commentText}}</div>
     <br>
-     <div><a href="/places/{{placeId}}/comment/{{commentId}}/edit">Edit comment</a></div> 
+    <div><a href="/places/{{placeId}}/comment/{{commentId}}/edit">Edit comment</a></div> 
+    <div><a href="/places/{{placeId}}/comment/{{commentId}}/delete">Delete Comment</a></div>
 
 
 
