@@ -5,6 +5,32 @@
     <div id="login-btn"><button class="btn">log in</button><button class="btn">sign up</button></div>
 </header>
 
+
+<nav id="primary_nav_wrap">
+<ul>
+    <li class="current-menu-item"><a href="#">Menu</a>
+        <ul>
+            <li class="dir"><a href="/">HOME</a></li>
+            <li class="dir"><a href="/places">PLACE INDEX</a>
+                <ul>
+                {{!-- <li><a href=""/places/{{placeId}}"">PLACE</a></li> --}}
+                    <li><a href="/places/{{placeId}}">PLACE</a>
+                        {{!-- <ul>
+                            <li><a href="#">PLACE 4 COMMENT INDEX</a></li>
+                        </ul> --}}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+</nav>
+
+
+
+
+
+
 <div class="main">
 <h1>{{placeName}}</h1>
 <div id="new-comment-btn"><a href="/places/{{placeId}}/comment/new"><button class="btn btn-sm">leave a comment</button></a></div>
