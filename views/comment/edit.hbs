@@ -1,7 +1,7 @@
 <header class="header">
      {{!-- <h5>{{title}}</h5>  --}}
-    <div id="back-btn"><button class="btn"><a href="/places/{{placeId}}/comment">Back to {{placeName}}'s comments</a></button>
-    </div><div id="login-btn"><button class="btn">log in</button><button class="btn">sign up</button></div>
+    <div id="back-btn"><button class="btn"><a href="/places/{{placeId}}/comment">Back to {{placeName}}'s comments</a></button></div>
+    <div id="login-btn"><button class="btn">log in</button><button class="btn">sign up</button></div>
 </header>
 
 <h1>{{placeName}}</h1>
@@ -12,7 +12,7 @@
         <div><input type="text" value="{{commentTitle}}" name="title"></div>
         <div><input type="text" value="{{commentUserName}}" name="userName"></div>
         <div><input type="number" min="1" max="5" name="rating" value="{{commentRating}}"></div>
-        <div><label for="rating">Is it empty? It's a 1.<br>Super crowded? That's 5.</div>
+        <div><label for="rating" id="p-label">is it empty? It's a 1.<br>super crowded? That's 5.</div>
          {{!-- <div><input type="range" min="1" max="5" value="{{commentRating}}" name="rating"></div>  --}}
         <div><textarea id="" cols="" rows="5" style="overflow:auto; resize:none" name="text">{{commentText}}</textarea></div>
         <div><input type="submit" value="update">

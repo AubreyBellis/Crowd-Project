@@ -18,7 +18,7 @@ body {
     background-color: #e3fcfc;
 
 }
-.body-index {
+#body-index {
     background: url(/images/atlanta.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -271,11 +271,13 @@ button.btn.btn-sm {
 
 form {
     padding: 10px;
+    /* text-align: left; */
+    font-family: 'Roboto', sans-serif;
 }    
 
 textarea {
     border-radius: 5px;
-    width: 90%;
+    width: 97%;
 }
 
 input[type="text"] {
@@ -287,19 +289,32 @@ input[type="text"] {
 }
 
 label {
-    clear: right;
-    text-align: left;
+     /* clear: right;  */
+    /* float: left; */
     padding: 8px 12px;
     width: 45%;
     padding: 5px; 
     margin: 2px;
+    display: inline;
+}
+
+/* #label {
+    clear: right;
+} */
+
+#p-label {
+    font-size: 14px;
+    display: inline-block;
+    text-align: left;
+    line-height: 15px;
+    width: 65%;
 }
 
 input[type="number"] {
-    float: right;
+    float: right; 
     border-radius: 5px;
     padding: 8px 12px;
-    width: 45%;
+    width: 25%;
     padding: 5px; 
     margin: 2px;
 }
@@ -308,7 +323,7 @@ input[type="submit"] {
     color: #FFF;
     background-color: #9BB2E2;
     border-radius: 5px;
-    padding: 8px 12px;
+    padding: 6px 12px;
     border: .094em solid #7b93c4; 
     box-shadow: 0 0.350em 0.313em -0.313em rgba(0,0,0,.5), inset 0 0.063em rgba(255,255,255,.4), inset 0 -0.188em rgba(0,0,0,.15); 
     text-transform: uppercase;
