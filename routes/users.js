@@ -2,14 +2,14 @@ var express = require('express');
 var router = express.Router();
 
 var User = require('../models/user');
-var Comment = require('../models/comment');
+var Item = require('../models/item');
 
 // USERS INDEX ROUTE
 router.get('/', (request, response) => {
-  User.find({}).then((users) => {
+  User.find({}).then((user) => {
     response.render(
         'users/index',
-        { users },
+        { user },
     );
   }).catch((error) => {
     console.log('Error retrieving users from database!');
@@ -68,12 +68,12 @@ router.get('/:id', (request, response) => {
   const userIdToSearchDbFor = request.params.id;
 
   User.findById(userIdToSearchDbFor).then((user) => {
-    console.log(user.comment);
+    console.log(user.email);
     response.render(
         'users/show',
         {
           user,
-          userItems: user.comment
+          userItems: user.items
         }
     );
   }).catch((error) => {

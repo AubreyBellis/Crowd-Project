@@ -23,14 +23,17 @@ var PlaceSchema = new Schema({
     img: String,
 });
 
+var ItemSchema = new Schema({
+  name: String
+});
 
 var UserSchema = new Schema({
-      name: String,
+      first_name: String,
       email: { type: String, required: true, unique: true },
-      password: { type: String, required: true, unique: true },
+      // password: { type: String, required: true, unique: true },
       created_at: Date,
       updated_at: Date,
-      comment: [CommentSchema]
+      // comment: [CommentSchema]
 });
 
 
@@ -66,9 +69,11 @@ UserSchema.pre('save', function(next){
 var UserModel = mongoose.model("User", UserSchema);
 var PlaceModel = mongoose.model("Place", PlaceSchema);
 var CommentModel = mongoose.model("Comment", CommentSchema);
+var ItemModel = mongoose.model("Item", ItemSchema);
 
 module.exports = {
     User: UserModel,
     Place: PlaceModel,
-    Comment: CommentModel
+    Comment: CommentModel,
+    Item: ItemModel
 };

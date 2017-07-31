@@ -4,6 +4,7 @@ mongoose.connect('mongodb://localhost/crowd');
 var Place = require('../models/place');
 var Comment = require('../models/comment');
 var User = require('../models/user');
+var Item = require('../models/item');
 
 // Use native promises
 mongoose.Promise = global.Promise;
@@ -19,6 +20,9 @@ Place.remove({}, function(err){
 
 User.remove({}, function(err){
     console.log(err);
+});
+Item.remove({}, function(err){
+  console.log(err);
 });
 // create new places
 var pcm = new Place({
@@ -134,41 +138,41 @@ victory.save(function(err) {
 });
 
 // create new users
-var danny = new User({
-  first_name: 'Danny',
-  email: 'danny@gmail.com',
-  items: []
+var kris = new User({
+  first_name: 'Kris',
+  email: 'kris@gmail.com',
+  items: [{ name: "Code some code" }]
 });
 
-var maren = new User({
-  first_name: 'Maren',
-  email: 'maren@gmail.com',
+var jessica = new User({
+  first_name: 'Jessica',
+  email: 'Jessica@gmail.com',
   items: [{ name: "Get dry cleaning" }]
 });
 
-var diesel = new User({
-  first_name: 'Diesel',
-  email: 'diesel@gmail.com',
+var aubrey = new User({
+  first_name: 'Aubrey',
+  email: 'Aubrey@gmail.com',
   items: [{ name: "Go to the dog park" }, { name: "Go to the cat park" }]
 });
 
 // save the users
-danny.save(function(err) {
+kris.save(function(err) {
   if (err) console.log(err);
 
-  console.log('danny created!');
+  console.log('Kris created!');
 });
 
-maren.save(function(err) {
+jessica.save(function(err) {
   if (err) console.log(err);
 
-  console.log('maren created!');
+  console.log('Jessica created!');
 });
 
-diesel.save(function(err) {
+aubrey.save(function(err) {
   if (err) console.log(err);
   
-  console.log('diesel created!');
+  console.log('Aubrey created!');
 });
 
 mongoose.connection.close();
