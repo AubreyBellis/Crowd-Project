@@ -4,8 +4,7 @@
     <div id="login-btn"><button class="btn">log in</button><button class="btn">sign up</button></div>
 </header>
 
-<h1>Make a new comment for {{placeName}}</h1>
-
+<div class="main">
 <h1>{{placeName}}</h1>
 
 <div class="main-comment-show">
@@ -13,10 +12,10 @@
     <form action="/places/{{placeId}}/comment" method="POST">
         <div><input type="text" placeholder="title" name="title"></div>
         <div><input type="text" placeholder="user name" name="userName"></div>
-        <div><label for="rating">Is it empty? It's a 1.<br>Super crowded? That's 5.</div>
-        <div><input type="number" min="1" max="5" name="rating"></div>
+        <div><input type="number" min="1" max="5" name="rating" placeholder="1"></div>
+        <div><label for="rating"id="p-label">is it empty? It's a 1.<br>super crowded? That's 5.</div>
          {{!-- <div><input type="range" min="1" max="5" value="{{commentRating}}" name="rating"></div>  --}}
-        <div><textarea id="" cols="" rows="5" style="overflow:auto; resize:none" placeholder="comment here" name="text"></textarea></div>
+        <textarea id="" cols="" rows="5" style="overflow:auto; resize:none" placeholder="comment here" name="text"></textarea>
         <div><input type="submit" value="comment">
     </form>   
     </div>   {{!-- class="card" --}}
@@ -34,4 +33,4 @@
   <br>
   <br>
   <br>
-{{!-- </div>  class="main"  --}}
+</div>  {{!-- class="main"  --}}

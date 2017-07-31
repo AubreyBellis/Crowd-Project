@@ -33,13 +33,22 @@ router.get('/new', (req, res) => {
     const placeName = req.params.placeName;
 
     console.log('new comment form');
-    res.render(
-        'comment/new',
-        {
-          placeId,
-          placeName
-        },
-    );
+    Place.findById(placeId)
+        .then((place) => {
+            // res.send('COMMENTS HERE!');
+            console.log('comment new test');
+            res.render(
+                'comment/new',
+                {
+                placeId: place._id,
+                placeName: place.name,
+                // comments: place.comments
+                },
+            );
+        }).catch((err) => {
+        console.log('Failed to find comment index');
+        console.log(err);
+    });
 });
 
 // CREATE (POST) NEW COMMENT
