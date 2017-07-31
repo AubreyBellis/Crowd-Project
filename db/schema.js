@@ -20,7 +20,7 @@ var PlaceSchema = new Schema({
     created_at: Date,
     updated_at: Date,
     comments: [CommentSchema],
-    img: String,
+    image: String,
 });
 
 var FavoritesSchema = new Schema({
