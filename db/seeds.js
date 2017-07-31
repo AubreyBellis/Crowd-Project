@@ -54,7 +54,7 @@ var pcm = new Place({
         rating: 3,
         },
     ],
-     image:'http://i.imgur.com/YnpbXtRm.jpg',
+     image:'http://i.imgur.com/YnpbXtRl.jpg',
 });
 
 var clermontLounge = new Place({
