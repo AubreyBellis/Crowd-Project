@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var methodOverride = require('method-override');
+var hbs = require('hbs');
 
 require('dotenv').config();
 
@@ -34,8 +35,11 @@ app.use(methodOverride('_method'));
 const indexController = require('./routes/index.js');
 app.use('/', indexController);
 
-// const userController = require('./routes/users.js');
-// app.use('/user', userController)
+var usersController = require("./routes/users.js");
+app.use('/users', usersController);
+
+const favoritesController = require('./routes/favorites.js');
+app.use('/users/:userId/favorites', favoritesController);
 
 const placeController = require('./routes/places.js');
 app.use('/places', placeController)

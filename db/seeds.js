@@ -3,6 +3,8 @@ mongoose.connect('mongodb://localhost/crowd');
 
 var Place = require('../models/place');
 var Comment = require('../models/comment');
+var User = require('../models/user');
+var Favorites = require('../models/favorites');
 
 // Use native promises
 mongoose.Promise = global.Promise;
@@ -16,6 +18,12 @@ Place.remove({}, function(err){
     console.log(err);
 });
 
+User.remove({}, function(err){
+    console.log(err);
+});
+Favorites.remove({}, function(err){
+  console.log(err);
+});
 // create new places
 var pcm = new Place({
     name: 'Ponce City Market',
@@ -160,9 +168,50 @@ victory.save(function(err) {
     
     console.log('Victory!');
 });
+
+// create new users
+// var kris = new User({
+//   first_name: 'Kris',
+//   email: 'kris@gmail.com',
+//   items: [{ name: "Code some code" }]
+// });
+
+// var jessica = new User({
+//   first_name: 'Jessica',
+//   email: 'Jessica@gmail.com',
+//   items: [{ name: "Get dry cleaning" }]
+// });
+
+// var aubrey = new User({
+//   first_name: 'Aubrey',
+//   email: 'Aubrey@gmail.com',
+//   items: [{ name: "Go to the dog park" }, { name: "Go to the cat park" }]
+// });
+
+// save the users
+// kris.save(function(err) {
+//   if (err) console.log(err);
+
+//   console.log('Kris created!');
+// });
+
+// jessica.save(function(err) {
+//   if (err) console.log(err);
+
+//   console.log('Jessica created!');
+// });
+
+// aubrey.save(function(err) {
+//   if (err) console.log(err);
+  
+//   console.log('Aubrey created!');
+// });
+
+
 highMuseumOfArt.save(function(err) {
     if (err) console.log(err);
     
     console.log('High!');
 });
+
 mongoose.connection.close();
