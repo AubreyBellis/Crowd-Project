@@ -1,30 +1,40 @@
 <header class="header">
-    {{!-- <h5>{{title}}</h5> --}}
-    <a href="/places/{{placeId}}"><div id="back-btn"><button class="btn">Back to {{placeName}}</button></div></a>
-    {{!-- <div><h2 class="logo">CROWDed</h2></div> --}}
+
+<nav id="primary_nav_wrap">
+    <ul>
+        <li class="current-menu-item"><a href="#"><button class="btn btn-menu">Menu</button></a>
+            <ul>
+                <li class="dir"><a href="/">HOME</a></li>
+                <li class="dir"><a href="/places">PLACE INDEX</a>
+                    <ul>
+                        <li><a href="/places/{{placeId}}">PLACE SHOW</a></li>
+                    </ul>
+                </li>
+                <li class="dir"><a href="/places/{{placeId}}">BACK</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+    {{!-- <a href="/places/{{placeId}}"><div id="back-btn"><button class="btn">Back to {{placeName}}</button></div></a> --}}
     <div id="login-btn"><button class="btn">log in</button><button class="btn">sign up</button></div>
 </header>
 
 
-<nav id="primary_nav_wrap">
+{{!-- <nav id="primary_nav_wrap">
 <ul>
     <li class="current-menu-item"><a href="#">Menu</a>
         <ul>
             <li class="dir"><a href="/">HOME</a></li>
             <li class="dir"><a href="/places">PLACE INDEX</a>
                 <ul>
-                {{!-- <li><a href=""/places/{{placeId}}"">PLACE</a></li> --}}
                     <li><a href="/places/{{placeId}}">PLACE</a>
-                        {{!-- <ul>
-                            <li><a href="#">PLACE 4 COMMENT INDEX</a></li>
-                        </ul> --}}
                     </li>
                 </ul>
             </li>
         </ul>
     </li>
 </ul>
-</nav>
+</nav> --}}
 
 
 

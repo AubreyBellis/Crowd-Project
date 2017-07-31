@@ -1,7 +1,26 @@
 <header class="header">
      {{!-- <h5>{{title}}</h5>  --}}
-    <div id="back-btn"><button class="btn"><a href="/places/{{placeId}}/comment">Back to {{placeName}}'s comments</a></button></div>
-    <div id="login-btn"><button class="btn">log in</button><button class="btn">sign up</button></div>
+<nav id="primary_nav_wrap">
+    <ul>
+        <li class="current-menu-item"><a href="#"><button class="btn btn-menu">Menu</button></a>
+            <ul>
+                <li class="dir"><a href="/">HOME</a></li>
+                <li class="dir"><a href="/places">PLACE INDEX</a>
+                    <ul>
+                        <li><a href="/places/{{placeId}}">PLACE SHOW</a>
+                            <ul>
+                                <li><a href="/places/{{placeId}}/comment">PLACE COMMENT INDEX</a></li>
+                            </ul> 
+                        </li>
+                    </ul>
+                </li>
+                <li class="dir"><a href="/places/{{placeId}}/comment">BACK</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+    {{!-- <div id="back-btn"><a href="/places/{{placeId}}/comment"><button class="btn">Back to {{placeName}}'s comments</button></a></div> --}}
+    <div id="login-btn"><a href="#"><button class="btn">log in</button></a><a href="#"><button class="btn">sign up</button></a></div>
 </header>
 
 <div class="main">
@@ -9,26 +28,25 @@
 
 
 
-<nav id="primary_nav_wrap">
-<ul>
-    <li class="current-menu-item"><a href="#">Menu</a>
-        <ul>
-            <li class="dir"><a href="/">HOME</a></li>
-            <li class="dir"><a href="/places">PLACE INDEX</a>
-                <ul>
-                {{!-- <li><a href=""/places/{{placeId}}"">PLACE</a></li> --}}
-                    <li><a href="/places/{{placeId}}">PLACE SHOW</a>
-                         <ul>
-                            <li><a href="/places/{{placeId}}/comment">PLACE COMMENT INDEX</a></li>
-                        </ul> 
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-</ul>
+{{!-- <nav id="primary_nav_wrap">
+    <ul>
+        <li class="current-menu-item"><a href="#"><button class="btn">Menu</button></a>
+            <ul>
+                <li class="dir"><a href="/">HOME</a></li>
+                <li class="dir"><a href="/places">PLACE INDEX</a>
+                    <ul>
+                        <li><a href="/places/{{placeId}}">PLACE SHOW</a>
+                            <ul>
+                                <li><a href="/places/{{placeId}}/comment">PLACE COMMENT INDEX</a></li>
+                            </ul> 
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
 </nav>
-
+ --}}
 
 
 <div class="main-comment-show">
