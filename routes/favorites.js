@@ -1,7 +1,7 @@
 const express = require('express');
 
 const User = require('../models/user');
-const Item = require('../models/item');
+const Favorites = require('../models/favorites');
 
 const router = express.Router({mergeParams: true});
 
@@ -11,11 +11,11 @@ router.get('/', (request, response) => {
 
   User.findById(userIdToFind).then((user) => {
     response.render(
-        'items/index',
+        'favorites/index',
         {
           userId: user._id,
           userName: user.first_name,
-          items: user.items,
+          favorites: user.favorites,
         },
     );
   });
@@ -26,7 +26,7 @@ router.get('/new', (request, response) => {
   const userId = request.params.userId;
 
   response.render(
-      'items/new',
+      'favorites/new',
       {userId},
   );
 });
@@ -34,27 +34,27 @@ router.get('/new', (request, response) => {
 // CREATE ROUTE
 router.post('/', (request, response) => {
   const userId = request.params.userId;
-  const newItemInfo = request.body;
+  const newFavoritesInfo = request.body;
 
   User.findById(userId).then((user) => {
-    const newItem = new Item(newItemInfo);
+    const newFavorites = new Favorites(newFavoritesInfo);
 
-    user.items.push(newItem);
+    user.favorites.push(newFavorites);
 
     // RETURN the promise from user.save() so we can chain .then() blocks
     // and only end up with one .catch() block at the very end
     return user.save();
 
   }).then((user) => {
-    console.log(`Saved new user with ID of ${user._id}`);
+    console.log(`Saved new favorite`);
 
     response.render(
-        'items/show',
+        'favorites/show',
         {
           userId,
           userName: user.first_name,
-          itemId: newItem._id,
-          itemName: newItem.name,
+          favoritesId: newFavorites._id,
+          favoritesName: newFavorites.name,
         },
     );
   }).catch((error) => {
@@ -63,89 +63,89 @@ router.post('/', (request, response) => {
 });
 
 // SHOW
-router.get('/:itemId', (request, response) => {
+router.get('/:favoritesId', (request, response) => {
   const userId = request.params.userId;
-  const itemId = request.params.itemId;
+  const favoritesId = request.params.favoritesId;
 
   User.findById(userId).then((user) => {
 
-    const foundItem = user.items.find((item) => {
-      return item.id === itemId;
+    const foundFavorites = user.favorites.find((favorites) => {
+      return favorites.id === favoritesId;
     });
 
     response.render(
-        'items/show',
+        'favorites/show',
         {
           userId,
           userName: user.first_name,
-          itemId: foundItem._id,
-          itemName: foundItem.name,
+          favoritesId: foundFavorites._id,
+          favoritesName: foundFavorites.name,
         },
     );
   }).catch((error) => {
-    console.log(`Failed to find user with ID of ${userId}`);
+    console.log(`Failed to find favorites`);
     console.log(error);
   });
 });
 
 // RENDER THE EDIT FORM
-router.get('/:itemId/edit', (request, response) => {
+router.get('/:favoritesId/edit', (request, response) => {
   const userId = request.params.userId;
-  const itemId = request.params.itemId;
+  const favoritesId = request.params.favoritesId;
 
   User.findById(userId).then((user) => {
-    const foundItem = user.items.find((item) => {
-      return item.id === itemId;
+    const foundFavorites = user.favorites.find((favorites) => {
+      return favorites.id === favoritesId;
     });
 
-    response.render('items/edit', {
+    response.render('favorites/edit', {
       userId,
-      item: foundItem,
+      favorites: foundFavorites,
     });
   });
 });
 
 // UPDATE AN ITEM
-router.put('/:itemId', (request, response) => {
+router.put('/:favoritesId', (request, response) => {
   const userId = request.params.userId;
-  const itemId = request.params.itemId;
+  const favoritesId = request.params.favoritesId;
 
   User.findById(userId).then((user) => {
-    const foundItem = user.items.find((item) => {
-      return item.id === itemId;
+    const foundFavorites = user.favorites.find((favorites) => {
+      return favorites.id === favoritesId;
     });
 
-    foundItem.name = request.body.name;
+    foundFavorites.name = request.body.name;
 
     // then save the user and return the promise so we can chain
     // another .then() block and only use one .catch() block
     return user.save();
 
   }).then((user) => {
-    console.log(`updated user with ID of ${user._id}`);
+    console.log(`updated favorites`);
 
     response.render(
-        'items/index',
+        'favorites/index',
         {
           userId: user._id,
           userName: user.first_name,
-          items: user.items,
+          favorites: user.favorites,
         },
     );
   }).catch((error) => {
-    console.log(`Failed to update item with ID of ${itemId}`);
+    console.log(`Failed to update favorites`);
     console.log(error);
   });
 });
 
 // DELETE 
-router.get('/:itemId/delete', (request, response) => {
+router.get('/:favoritesId/delete', (request, response) => {
   const userId = request.params.userId;
-  const itemId = request.params.itemId;
+  const favoritesId = request.params.favoritesId;
 
   User.findById(userId).then((user) => {
     //use Mongoose to remove the item from the user
-    user.items.id(itemId).remove();
+    user.favorites.id(favoritesId).remove();
 
     // then save the user and return the promise so we can chain
     // another .then() block and only use one .catch() block
@@ -153,15 +153,15 @@ router.get('/:itemId/delete', (request, response) => {
 
   }).then((user) => {
     response.render(
-        'items/index',
+        'favorites/index',
         {
           userId: user._id,
           userName: user.first_name,
-          items: user.items,
+          favorites: user.favorites,
         },
     );
   }).catch((error) => {
-    console.log(`Failed to delete user with ID of ${userId}`);
+    console.log(`Failed to delete favorites`);
     console.log(error);
   });
 });

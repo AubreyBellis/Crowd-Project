@@ -35,8 +35,8 @@ app.use('/', indexController);
 var usersController = require("./routes/users.js");
 app.use('/users', usersController);
 
-const itemsController = require('./routes/items.js');
-app.use('/users/:userId/items', itemsController);
+const favoritesController = require('./routes/favorites.js');
+app.use('/users/:userId/favorites', favoritesController);
 
 const placeController = require('./routes/places.js');
 app.use('/places', placeController)

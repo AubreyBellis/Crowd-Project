@@ -23,7 +23,7 @@ var PlaceSchema = new Schema({
     img: String,
 });
 
-var ItemSchema = new Schema({
+var FavoritesSchema = new Schema({
   name: String
 });
 
@@ -34,7 +34,7 @@ var UserSchema = new Schema({
       password: { type: String, required: true, unique: true },
       created_at: Date,
       updated_at: Date,
-      // comment: [CommentSchema]
+      favorites: [FavoritesSchema]
 });
 
 
@@ -66,15 +66,23 @@ UserSchema.pre('save', function(next){
   next();
 });
 
+FavoritesSchema.pre('save', function(next){
+  now = new Date();
+  this.updated_at = now;
+  if ( !this.created_at ) {
+    this.created_at = now;
+  }
+  next();
+});
 
 var UserModel = mongoose.model("User", UserSchema);
 var PlaceModel = mongoose.model("Place", PlaceSchema);
 var CommentModel = mongoose.model("Comment", CommentSchema);
-var ItemModel = mongoose.model("Item", ItemSchema);
+var FavoritesModel = mongoose.model("Item", FavoritesSchema);
 
 module.exports = {
     User: UserModel,
     Place: PlaceModel,
     Comment: CommentModel,
-    Item: ItemModel
+    Favorites: FavoritesModel
 };

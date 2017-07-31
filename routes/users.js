@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var User = require('../models/user');
-var Item = require('../models/item');
+var Favorites = require('../models/favorites');
 
 // USERS INDEX ROUTE
 router.get('/', (request, response) => {

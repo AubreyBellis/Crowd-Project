@@ -1,6 +1,6 @@
 # Project 2 - Crowded
 
-### This project contains examples of CRUD routes in Express for two embedded models: Places and Comments.
+### This project contains examples of RESTful routes in Express for three models: Places and Comments.
 Languages and frameworks used to create this app are HTML, CSS, Javascript (jQuery), Mongo DB, Express, and Node
 #### To run the project:
 • clone the repository and open file location in your terminal
@@ -17,10 +17,15 @@ This app could also be utilized by businesses to review user's comments and rati
 * Responsive site using media query - Future Dev
 * Cloud based database deployed to Heroku
 # ERD
-[![logo](http://i.imgur.com/NXja8aj.png "Crowd ERD") ](http://drinkable.herokuapp.com)
+![logo](http://i.imgur.com/NXja8aj.png "Crowd ERD")
 # WIRE FRAME
-[![logo](http://i.imgur.com/VB2hXzT.png "Crowd ERD") ](http://drinkable.herokuapp.com)
-[![logo](http://i.imgur.com/byyMWH1.png "Crowd ERD") ](http://drinkable.herokuapp.com)
+![logo](http://i.imgur.com/VB2hXzT.png "Crowd ERD")
+![logo](http://i.imgur.com/byyMWH1.png "Crowd ERD")
+![logo](http://i.imgur.com/mkI7NYd.png "Crowd ERD")
+![logo](http://i.imgur.com/PWKOgjw.png "Crowd ERD")
+
+
+
 
 
 

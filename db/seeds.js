@@ -4,7 +4,7 @@ mongoose.connect('mongodb://localhost/crowd');
 var Place = require('../models/place');
 var Comment = require('../models/comment');
 var User = require('../models/user');
-var Item = require('../models/item');
+var Favorites = require('../models/favorites');
 
 // Use native promises
 mongoose.Promise = global.Promise;
@@ -21,7 +21,7 @@ Place.remove({}, function(err){
 User.remove({}, function(err){
     console.log(err);
 });
-Item.remove({}, function(err){
+Favorites.remove({}, function(err){
   console.log(err);
 });
 // create new places
