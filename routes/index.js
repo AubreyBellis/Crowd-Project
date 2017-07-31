@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   console.log('homepage index test')
   // res.send('HOMEPAGE')
-  res.render('index', { title: 'Crowded!' });
+  res.render('index', { title: 'CROWDED' });
 });
 
 module.exports = router;
