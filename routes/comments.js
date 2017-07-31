@@ -91,6 +91,7 @@ router.get('/:commentId', (req, res) => {
             commentTitle: foundComment.title,
             commentUserName: foundComment.userName,
             commentCreatedAt: foundComment.created_at,
+            commentUpdatedAt: foundComment.updated_at,
             commentRating: foundComment.rating,
             commentText: foundComment.text
             },

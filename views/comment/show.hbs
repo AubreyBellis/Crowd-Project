@@ -16,9 +16,20 @@
     <div><a href="/places/{{placeId}}/comment/{{commentId}}/edit">Edit comment</a></div> 
     <div><a href="/places/{{placeId}}/comment/{{commentId}}/delete">Delete Comment</a></div>
 
+<div class="main-comments">
+    <div class="card">
+        <div id="comment-rating">{{commentRating}}</div>
+        <div id="comment-title">{{commentTitle}}</div>
+        <div>User Name: {{commentUserName}}</div>
+        <div id="comment-created">{{commentCreatedAt}}</div> 
+        <div id="comment-created">{{commentCreatedAt}}</div> 
+    <div class="card-container">    
+        <div>{{CommentText}}</div>
+        <br>
+    </div {{!-- class="card-containter" --}}>
+    </div {{!-- class="container" --}}>
 
 
 
 <br>
 <br>
-<div><a href="/places/{{placeId}}/comment">Back to {{placeName}}'s comments</a></div>
