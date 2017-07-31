@@ -1,16 +1,16 @@
 <header class="header">
     {{!-- <h5>{{title}}</h5> --}}
-    <a href="/places/{{placeId}}"><div id="back-button"><button class="btn">Back to {{placeName}}</button></div></a>
+    <a href="/places/{{placeId}}"><div id="back-btn"><button class="btn">Back to {{placeName}}</button></div></a>
     <div><h2 class="logo">CROWDed</h2></div>
-    <div id="login-buttons"><button class="btn">log in</button><button class="btn">sign up</button></div>
+    <div id="login-btn"><button class="btn">log in</button><button class="btn">sign up</button></div>
 </header>
 
 <div class="main">
 <h1>{{placeName}}</h1>
-<div id="new-comment-button"><a href="/places/{{placeId}}/comment/new"><button class="btn">leave a comment</button></a></div>
+<div id="new-comment-btn"><a href="/places/{{placeId}}/comment/new"><button class="btn">leave a comment</button></a></div>
 <br>
 <br>
-<div class="main-comments">
+<div class="main-comment-index">
 {{#each comments}}
     <div class="card">
         <div id="comment-rating">{{this.rating}}</div>
@@ -23,13 +23,13 @@
         {{!-- <div><a href="/places/{{../placeId}}/comment/{{this._id}}">Show Comment</a></div> --}}
         {{!-- <div><a href="/places/{{../placeId}}/comment/{{this._id}}/edit">Edit Comment</a></div> --}}
         {{!-- <div><a href="/places/{{../placeId}}/comment/{{this._id}}/delete">Delete Comment</a></div> --}}
-    </div {{!-- class="card-containter" --}}>
-    </div {{!-- class="container" --}}>
+    </div> {{!-- class="card-containter" --}}
+    </div>{{!-- class="card" --}}
 
     <br>
     <br>
 {{/each}}
-</div {{!-- class="main-comments" --}}
+</div> {{!-- class="main-comments" --}}
   <br>
   <br>
   <br>
@@ -43,5 +43,5 @@
   <br>
   <br>
   <br>
-</div>
+</div> {{!-- class="main" --}}
 
