@@ -9,8 +9,8 @@
 <div class="main-comment-show">
     <div class="card form">
     <form action="/places/{{placeId}}/comment/{{commentId}}?_method=PUT" method="POST">
-        <div><input type="text" width="100%" value="{{commentTitle}}" name="title"></div>
-        <div><input type="text" width="100%" value="{{commentUserName}}" name="userName"></div>
+        <div><input type="text" value="{{commentTitle}}" name="title"></div>
+        <div><input type="text" value="{{commentUserName}}" name="userName"></div>
         <div><input type="number" min="1" max="5" name="rating" value="{{commentRating}}"></div>
         <div><label for="rating">Is it empty? It's a 1.<br>Super crowded? That's 5.</div>
          {{!-- <div><input type="range" min="1" max="5" value="{{commentRating}}" name="rating"></div>  --}}
@@ -19,10 +19,6 @@
     </form>   
     </div>   {{!-- class="card" --}}
 </div> {{!-- class="main" --}}
-
-
-    
-
   <br>
   <br>
   <br>

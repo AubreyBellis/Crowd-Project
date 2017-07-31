@@ -249,6 +249,11 @@ button.btn.btn-sm {
 /* ==============================
               FORM
     ============================  */
+
+form {
+    padding: 10px;
+}    
+
 textarea {
     border-radius: 5px;
     width: 90%;
