@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var methodOverride = require('method-override');
+var hbs = require('hbs');
 
 require('dotenv').config();
 
@@ -17,6 +18,7 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+app.use(express.static(__dirname + '/images'));
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -26,7 +28,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 //CSS and Images
-app.use(express.static('public/images'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
@@ -34,8 +35,11 @@ app.use(methodOverride('_method'));
 const indexController = require('./routes/index.js');
 app.use('/', indexController);
 
-// const userController = require('./routes/users.js');
-// app.use('/user', userController)
+var usersController = require("./routes/users.js");
+app.use('/users', usersController);
+
+const favoritesController = require('./routes/favorites.js');
+app.use('/users/:userId/favorites', favoritesController);
 
 const placeController = require('./routes/places.js');
 app.use('/places', placeController)

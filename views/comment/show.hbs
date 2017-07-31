@@ -1,16 +1,78 @@
+<header class="header">
+     {{!-- <h5>{{title}}</h5>  --}}
+<nav id="primary_nav_wrap">
+    <ul>
+        <li class="current-menu-item"><a href="#"><button class="btn btn-menu">Menu</button></a>
+            <ul>
+                <li class="dir"><a href="/">HOME</a></li>
+                <li class="dir"><a href="/places">PLACE INDEX</a>
+                    <ul>
+                        <li><a href="/places/{{placeId}}">PLACE SHOW</a>
+                            <ul>
+                                <li><a href="/places/{{placeId}}/comment">PLACE COMMENT INDEX</a></li>
+                            </ul> 
+                        </li>
+                    </ul>
+                </li>
+                <li class="dir"><a href="/places/{{placeId}}/comment">BACK</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+    {{!-- <div id="back-btn"><a href="/places/{{placeId}}/comment"><button class="btn">Back to {{placeName}}'s comments</button></a></div> --}}
+    <div id="login-btn"><a href="#"><button class="btn">log in</button></a><a href="#"><button class="btn">sign up</button></a></div>
+</header>
+
+<div class="main">
 <h1>{{placeName}}</h1><br>
-<h3>{{commentTitle}}</h3><br>
-
-    <div>User Name: {{commentUserName}}</div>
-    <div>Created At: {{commentCreatedAt}}</div>
-    <div>Rating: {{commentRating}}</div>
-    <div>Text: {{commentText}}</div>
-    <br>
-     <div><a href="/places/{{placeId}}/comment/{{commentId}}/edit">Edit comment</a></div> 
 
 
 
+{{!-- <nav id="primary_nav_wrap">
+    <ul>
+        <li class="current-menu-item"><a href="#"><button class="btn">Menu</button></a>
+            <ul>
+                <li class="dir"><a href="/">HOME</a></li>
+                <li class="dir"><a href="/places">PLACE INDEX</a>
+                    <ul>
+                        <li><a href="/places/{{placeId}}">PLACE SHOW</a>
+                            <ul>
+                                <li><a href="/places/{{placeId}}/comment">PLACE COMMENT INDEX</a></li>
+                            </ul> 
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+ --}}
 
-<br>
-<br>
-<div><a href="/places/{{placeId}}/comment">Back to {{placeName}}'s comments</a></div>
+
+<div class="main-comment-show">
+    <div class="card">
+        <div id="comment-rating">{{commentRating}}</div>
+        <div id="comment-title">{{commentTitle}}</div>
+        <div>User Name: {{commentUserName}}</div>
+        <div id="comment-created">{{commentCreatedAt}}</div> 
+        <div id="comment-updated">{{commentUpdatedAt}}</div> 
+     <div class="card-container">     
+        <div>{{commentText}}</div>
+    </div>  {{!-- class="card-containter" --}}
+        <div id="comment-edit-delete-btn"><a href="/places/{{placeId}}/comment/{{commentId}}/edit"><button class="btn btn-sm">Edit</button></a><a href="/places/{{placeId}}/comment/{{commentId}}/delete"><button class="btn btn-sm">Delete</button></a></div>
+    </div>   {{!-- class="card" --}}
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+</div> {{!-- class="main" --}}
+

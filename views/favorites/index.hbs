@@ -1,0 +1,14 @@
+<h1>{{userName}}'s Favorites</h1>
+
+{{#each items}}
+    <div>Favorites Name: {{this.name}}</div>
+
+    <div>
+        <a href="/users/{{../userId}}/favorites/{{this._id}}">Show Favorite</a>
+        <a href="/users/{{../userId}}/favorites/{{this._id}}/delete">Delete Favorites</a>
+    </div>
+
+    <div>
+        <a href="/users/{{../userId}}">Back to {{../userName}}</a>
+    </div>
+{{/each}}

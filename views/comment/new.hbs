@@ -1,18 +1,36 @@
-<h1>Make a new comment for {{placeName}}</h1>
+<header class="header">
+    {{!-- <h5>{{title}}</h5> --}}
+    <div id="back-btn"><button class="btn"><a href="/places/{{placeId}}/comment">Back to {{placeName}}</a></button></div>
+    <div id="login-btn"><button class="btn">log in</button><button class="btn">sign up</button></div>
+</header>
 
+<div class="main">
+<h1>{{placeName}}</h1>
 
-<form action="/places/{{placeId}}/comment" method="POST">
-    <div><input type="text" placeholder="User Name" name="userName"></div>
-    <div><input type="text" placeholder="Title" name="title"></div>
-    <div><label for="rating">Rating: Is it empty? It's a 1.</div>
-    <div>Is it super crowded? That's 5.</label></div>
-    <div><input type="number" min="1" max="5"></div>
-    {{!-- <div><input type="range" min="1" max="5" placeholder="rating" name="rating"></div> --}}
-    <div><textarea id="" cols="40" rows="5" style="overflow:auto; resize:none" placeholder="Comment Here" name="text"></textarea></div>
-    <div><input type="submit" value="Create comment">
-</form>   
-
-<br>
-    <div>
-        <a href="/places/{{placeId}}/comment">Back to {{placeName}}</a>
-    </div>
+<div class="main-comment-show">
+    <div class="card form">
+    <form action="/places/{{placeId}}/comment" method="POST">
+        <div><input type="text" placeholder="title" name="title"></div>
+        <div><input type="text" placeholder="user name" name="userName"></div>
+        <div><input type="number" min="1" max="5" name="rating" placeholder="1"></div>
+        <div><label for="rating"id="p-label">is it empty? It's a 1.<br>super crowded? That's 5.</div>
+         {{!-- <div><input type="range" min="1" max="5" value="{{commentRating}}" name="rating"></div>  --}}
+        <textarea id="" cols="" rows="5" style="overflow:auto; resize:none" placeholder="comment here" name="text"></textarea>
+        <div><input type="submit" value="comment">
+    </form>   
+    </div>   {{!-- class="card" --}}
+</div> {{!-- class="main" --}}
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>  {{!-- class="main"  --}}
