@@ -127,10 +127,10 @@ a:hover{
 button.btn {
     display: inline-block;
     /* padding: .938em 1.875em; */
-    border: .094em solid #25385F;
+     border: .094em solid #7b93c4; 
     border-radius: .625em;
     background-color: #9BB2E2;
-    box-shadow: 0 0.375em 0.313em -0.313em rgba(0,0,0,.8), inset 0 0.063em rgba(255,255,255,.4), inset 0 -0.188em rgba(0,0,0,.15);
+    box-shadow: 0 0.350em 0.313em -0.313em rgba(0,0,0,.5), inset 0 0.063em rgba(255,255,255,.4), inset 0 -0.188em rgba(0,0,0,.15); 
     color: #FFF;
     text-transform: uppercase;
     /* text-decoration: none; */
@@ -232,8 +232,10 @@ button.btn.btn-sm {
     text-align: left;  
     padding: 2px 5px 2px 10px;
     font-family: 'Spectral', serif;
-
 }
+/* .form {
+    margin: auto;
+} */
 
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -244,8 +246,47 @@ button.btn.btn-sm {
     text-align: left;
 }
 
-/*  font-family: 'Comfortaa', cursive;
-    font-family: 'Raleway', sans-serif;
-    font-family: 'Roboto', sans-serif;
-    font-family: 'Dosis', sans-serif;
- */
+/* ==============================
+              FORM
+    ============================  */
+textarea {
+    border-radius: 5px;
+    width: 90%;
+}
+
+input[type="text"] {
+    border-radius: 5px;
+    padding: 8px 12px;
+    width: 95%;
+    padding: 5px; 
+    margin: 2px;
+}
+
+label {
+    clear: right;
+    text-align: left;
+    padding: 8px 12px;
+    width: 45%;
+    padding: 5px; 
+    margin: 2px;
+}
+
+input[type="number"] {
+    float: right;
+    border-radius: 5px;
+    padding: 8px 12px;
+    width: 45%;
+    padding: 5px; 
+    margin: 2px;
+}
+
+input[type="submit"] {
+    color: #FFF;
+    background-color: #9BB2E2;
+    border-radius: 5px;
+    padding: 8px 12px;
+    border: .094em solid #7b93c4; 
+    box-shadow: 0 0.350em 0.313em -0.313em rgba(0,0,0,.5), inset 0 0.063em rgba(255,255,255,.4), inset 0 -0.188em rgba(0,0,0,.15); 
+    text-transform: uppercase;
+}
+
