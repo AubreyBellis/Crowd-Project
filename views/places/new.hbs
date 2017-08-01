@@ -1,10 +1,5 @@
 <header class="header">
 
-    {{!-- <h5>{{title}}</h5> --}}
-    
-
-
-
 <nav id="primary_nav_wrap">
     <ul>
         <li class="current-menu-item"><a href="#"><button class="btn btn-menu">Menu</button></a>
@@ -19,33 +14,31 @@
 
             {{!-- <div id="back-btn"><a href="/places"><button class="btn">Back to Places</button></a></div> --}}
     <div id="login-btn"><a href="#"><button class="btn">log in</button></a><a href="#"><button class="btn">sign up</button></a></div>
-
 </header>
-
-<h1>Welcome to {{place.name}}</h1>
-
-<blockquote>{{!-- <div><img src="" alt=""></ima></div> --}}
-<div>Address: {{place.address}}</div>
-<br>
-<div>Hours: {{place.hours}}</div>
-<br>
-<div>Description: {{place.description}}</div>
-<br>
-<div><img src='{{place.image}}'></div>
-
-<div><a href="/places/{{place.id}}/edit"><button class="btn btn-sm">edit</button></a> <a href="/places/{{place.id}}/delete"><button class="btn btn-sm">delete</button></a></div>
-
-</blockquote>
-{{!-- <div>Comments: {{place.comment}}</div> --}}
-
-<div><a href="/places/{{place.id}}/comment"><button class="btn btn-sm">{{place.name}}'s comments</button></a></div>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <br>
 <br>
 
+    <div class='card1'>
+        <div class="container">
+
+ <form action="/places/{{place.id}}" method="POST">
+    <div><input type="text" placeholder="place name" name="name"></div>
+    <div><input type="text" placeholder="address" name="address"></div>
+    <div><input type="text" placeholder="hours" name="hours"></div>
+    <div><input type="text" placeholder="image URL" name="image"></div></div>
+    <div><textarea name="" id="" cols="50" rows="6" style="overflow:auto; resize:none" placeholder="description here" name="placeDescription"></textarea></div>
+    <div><input type="submit" value="add a new place"></div>
+</form> 
+
+</div>
+ </div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

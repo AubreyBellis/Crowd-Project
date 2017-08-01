@@ -66,7 +66,6 @@ router.post('/', (req, res) => {
 
     }).then((place) => {
         console.log('Saved new place');
-        // res.send('new. fucking finally');
         res.render(
             'comment/index',
             { 
