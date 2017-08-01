@@ -27,17 +27,10 @@ router.get('/new', (req, res) => {
 });
 
 // PLACE CREATE POST ROUTE
-    // REMEMBER: if you set the `name=""` attribute of your form
-    // inputs to match the schema for your object, you can simply
-    // pass the request body into the constructor for your Mongoose
-    // object
-
 router.post('/', (req, res) => {
 console.log('posting new place');
   const newPlaceInfoFromForm = req.body;
 
-          // If the form body already contains everything you need for your user
-          // you can just do this:
    Place.create(newPlaceInfoFromForm).then((place) => {
     //  res.send('new place')
     res.render(
@@ -48,25 +41,6 @@ console.log('posting new place');
      console.log('Error saving new user to database!');
      console.log(err);
    });
-
-  // OR If you want to add more information to the user before
-  // you save, you can use the commented-out code below:
-
-  // const newUser = new User(request.body);
-
-  // newUser.save()
-  //     .then((newUser) => {
-  //         console.log(`New user created with ID of: ${newUser._id}`);
-
-  //         response.render(
-  //             'users/show',
-  //             { user: newUser }
-  //         );
-  //     })
-  //     .catch((error) => {
-  //         console.log('Error saving new user to database!');
-  //         console.log(error);
-  //     });
 });
 
 
@@ -99,10 +73,11 @@ router.get('/:id/edit', (req, res) => {
     // res.send('edit form');
     res.render(
         'places/edit',
-        {place},
+        {place,
+        placeDescription: place.description},
     );
   }).catch((err) => {
-    console.log(`Error rendering edit form for place with ID of ${placeIdToFind}`);
+    console.log(`Error rendering edit form`);
   });
 });
 
@@ -119,15 +94,16 @@ router.put('/:id', (req, res) => {
       
       {new: true} 
   ).then((place) => {
-    console.log(`Place with ID of ${place._id} updated!`);
+    console.log(`Place updated!`);
 
     res.render(
         'places/show',
         {place,
-        placeIdToUpdate},
+        placeDescription: place.description
+        },
     );
   }).catch((err) => {
-    console.log(`Place with ID of ${place._id} failed to update!`);
+    console.log(`Place failed to update!`);
     console.log(err);
   });
 
@@ -139,7 +115,7 @@ router.get('/:id/delete', (req, res) => {
   const placeIdToDelete = req.params.id;
 
   Place.findByIdAndRemove(placeIdToDelete).then(() => {
-    console.log(`Successfully deleted place with ID ${placeIdToDelete}!`);
+    console.log(`Successfully deleted place!`);
 
     res.redirect('/places');
   });
