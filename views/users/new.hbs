@@ -1,5 +1,11 @@
+<header class="header">
+    {{!-- <h5>{{title}}</h5> --}}
+    <div id="back-btn"><button class="btn"><a href="/places/{{placeId}}/comment">Back to {{placeName}}</a></button></div>
+    <div id="login-btn"><button class="btn">log in</button><button class="btn">sign up</button></div>
+</header>
 <h1>New User</h1>
 
+<div class="card form">
 <form action="/users" method="POST">
     <input type="text"  placeholder="first name" name="first_name">
     <input type="text"  placeholder="last name" name="last_name">
@@ -7,3 +13,4 @@
     <input type="password" placeholder="password" name="password" required>
     <input type="submit" value="Create">
 </form>
+</div>

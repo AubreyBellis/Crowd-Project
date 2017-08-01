@@ -1,12 +1,18 @@
-<h1>Hi {{user.first_name}} {{user.last_name}}</h1>
+<header class="header">
+    {{!-- <h5>{{title}}</h5> --}}
+    <div id="back-btn"><a href="/"><button class="btn">Home</button></a></div>
+    <div id="login-btn"><a href="#"><button class="btn">log in</button></a><a href="http://localhost:3000/users"><button class="btn">sign up</button></a></div>
+</header>
 
+<h1>Hi {{user.first_name}} {{user.last_name}}</h1>
+<div class="card form">
 <div>First Name: {{user.first_name}}</div>
 <div>Last Name: {{user.last_name}}</div>
 <div>Email: {{user.email}}</div>
 <div>Created At: {{user.created_at}}</div>
 <div>Favorites: {{user.favorites}}</div>
 
-<h2>{{user.first_name}}'s Favorites</h2>
+
 {{#each userFavorites}}
     <div>
         {{this.name}}
@@ -15,10 +21,11 @@
 {{/each}}
 
 <div>
-    <a href="/users/{{user._id}}/delete">Delete</a>
-    <a href="/users/{{user._id}}/edit">Edit</a>
+    <a href="/users/{{user._id}}/delete"><button class="btn">Delete</button></a>
+    <a href="/users/{{user._id}}/edit"><button class="btn">Edit</button></a>
 </div>
 <br>
 <div>
-    <a href="/users">Back to Users</a>
+    <a href="/users"><button class="btn">Back to Users</button></a>
+</div>
 </div>
