@@ -17,7 +17,7 @@
         <div>Last Name: {{this.last_name}}</div>
         <div>Email: {{this.email}}</div>
         <div>Created At: {{this.created_at}}</div>
-        <div>Favorites: {{this.favorites}}</div>
+        {{!-- <div>Favorites: {{this.favorites}}</div> --}}
         
         <a href="/users/{{this._id}}"><button class="btn">-Show {{this.first_name}}</button></a>
         <a href="/users/{{this._id}}/delete"><button class="btn">Delete {{this.first_name}}</button></a>
@@ -25,6 +25,7 @@
     </div>
 {{/each}}
 <br>
-    <div><a href="/users/new"><button class="btn">-Sign Up Now-</button></a></div>
+    
     </div>
 </div>
+<div><a href="/users/new"><button class="btn">-Create Profile-</button></a></div>
