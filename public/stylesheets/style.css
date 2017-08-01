@@ -211,7 +211,8 @@ button.btn.btn-sm {
 
 #back-btn {
     /* align-content: left; */
-    margin-left: 5px;
+    margin-left: 15px;
+    margin-bottom: 6px;
     margin-right: auto;
 }
 
