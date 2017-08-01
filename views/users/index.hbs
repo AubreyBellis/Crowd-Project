@@ -1,17 +1,31 @@
-<h1>Users</h1>
+<header class="header">
+    {{!-- <h5>{{title}}</h5> --}}
+    <div id="back-btn"><a href="/"><button class="btn">Home</button></a></div>
+    <div id="login-btn"><a href="#"><button class="btn">log in</button></a><a href="http://localhost:3000/users"><button class="btn">sign up</button></a></div>
+</header>
 
+<br>
+<br>
+<br>
+
+<h1>Start Posting Now</h1>
+<div class='card1'>
+        <div class="container">
 {{#each user}}
     <div>
         <div>First Name: {{this.first_name}}</div>
         <div>Last Name: {{this.last_name}}</div>
         <div>Email: {{this.email}}</div>
         <div>Created At: {{this.created_at}}</div>
-        <div>Favorites: {{this.favorites}}</div>
+        {{!-- <div>Favorites: {{this.favorites}}</div> --}}
         
-        <a href="/users/{{this._id}}">Show {{this.first_name}}</a>
-        <a href="/users/{{this._id}}/delete">Delete {{this.first_name}}</a>
-        <a href="/users/{{this._id}}/edit">Edit {{this.first_name}}</a>
+        <a href="/users/{{this._id}}"><button class="btn">-Show {{this.first_name}}</button></a>
+        <a href="/users/{{this._id}}/delete"><button class="btn">Delete {{this.first_name}}</button></a>
+        <a href="/users/{{this._id}}/edit"><button class="btn">Edit {{this.first_name}}</button></a>
     </div>
 {{/each}}
-
-<div><a href="/users/new">Create a new User</a></div>
+<br>
+    
+    </div>
+</div>
+<div><a href="/users/new"><button class="btn">-Create Profile-</button></a></div>
