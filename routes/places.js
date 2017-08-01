@@ -39,10 +39,11 @@ console.log('posting new place');
           // If the form body already contains everything you need for your user
           // you can just do this:
    Place.create(newPlaceInfoFromForm).then((place) => {
+    //  res.send('new place')
     res.render(
          'places/show',
-         {place},
-     );
+         {place}
+           );
    }).catch((err) => {
      console.log('Error saving new user to database!');
      console.log(err);
@@ -80,7 +81,7 @@ router.get('/:id', (req, res) => {
         'places/show',
         {
           place,
-          placeAdress: place.address
+          placeAddress: place.address
         }
     );
   }).catch((err) => {
@@ -115,13 +116,15 @@ router.put('/:id', (req, res) => {
   Place.findByIdAndUpdate(
       placeIdToUpdate,
       updatedPlaceInfo,
+      
       {new: true} 
   ).then((place) => {
     console.log(`Place with ID of ${place._id} updated!`);
 
     res.render(
         'places/show',
-        {place},
+        {place,
+        placeIdToUpdate},
     );
   }).catch((err) => {
     console.log(`Place with ID of ${place._id} failed to update!`);
