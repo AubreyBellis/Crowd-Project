@@ -32,8 +32,8 @@
     <form action="/places/{{placeId}}/comment" method="POST">
         <div><input type="text" placeholder="title" name="title"></div>
         <div><input type="text" placeholder="user name" name="userName"></div>
-        <div><input type="number" min="1" max="5" name="rating" placeholder="1"></div>
-        <div><label for="rating"id="p-label">is it empty? It's a 1.<br>super crowded? That's 5.</div>
+        <div><input type="number" min="1" max="5" name="rating" placeholder="1">
+        <label for="rating" id="p-label">is it empty? it's a 1.<br>super crowded? that's 5.</div>
          {{!-- <div><input type="range" min="1" max="5" value="{{commentRating}}" name="rating"></div>  --}}
         <textarea id="" cols="" rows="5" style="overflow:auto; resize:none" placeholder="comment here" name="text"></textarea>
         <div><input type="submit" value="comment">
@@ -53,4 +53,3 @@
   <br>
   <br>
   <br>
-</div>  {{!-- class="main"  --}}

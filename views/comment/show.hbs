@@ -1,5 +1,5 @@
 <header class="header">
-     {{!-- <h5>{{title}}</h5>  --}}
+
 <nav id="primary_nav_wrap">
     <ul>
         <li class="current-menu-item"><a href="#"><button class="btn btn-menu">Menu</button></a>
@@ -26,36 +26,13 @@
 <div class="main">
 <h1>{{placeName}}</h1><br>
 
-
-
-{{!-- <nav id="primary_nav_wrap">
-    <ul>
-        <li class="current-menu-item"><a href="#"><button class="btn">Menu</button></a>
-            <ul>
-                <li class="dir"><a href="/">HOME</a></li>
-                <li class="dir"><a href="/places">PLACE INDEX</a>
-                    <ul>
-                        <li><a href="/places/{{placeId}}">PLACE SHOW</a>
-                            <ul>
-                                <li><a href="/places/{{placeId}}/comment">PLACE COMMENT INDEX</a></li>
-                            </ul> 
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-    </ul>
-</nav>
- --}}
-
-
 <div class="main-comment-show">
     <div class="card">
-        <div id="comment-rating">{{commentRating}}</div>
+        <span class="comment-rating">{{commentRating}} <i class="fa fa-male" aria-hidden="true"></i></span>
         <div id="comment-title">{{commentTitle}}</div>
-        <div>User Name: {{commentUserName}}</div>
-        <div id="comment-created">{{commentCreatedAt}}</div> 
-        <div id="comment-updated">{{commentUpdatedAt}}</div> 
+        <div>{{commentUserName}}</div>
+        {{!-- <div id="comment-created">{{commentCreatedAt}}</div> 
+        <div id="comment-updated">{{commentUpdatedAt}}</div>  --}}
      <div class="card-container">     
         <div>{{commentText}}</div>
     </div>  {{!-- class="card-containter" --}}
