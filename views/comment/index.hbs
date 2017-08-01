@@ -30,7 +30,7 @@
 <div class="main-comment-index">
 {{#each comments}}
     <div class="card">
-        <div id="comment-rating">{{this.rating}}</div>
+        <div class="comment-rating">{{this.rating}}</div>
         <div id="comment-title"><a href="/places/{{../placeId}}/comment/{{this._id}}">{{this.title}}</a></div>
         <div>{{this.userName}}</div>
                 {{!-- <div id="comment-created">{{this.created_at}}</div> --}}
