@@ -23,23 +23,29 @@
 </header>
 
 <h1>{{place.name}}</h1>
- <div class='card1'>
+ <div class='card-show'>
   <div class="container">
 
-  <blockquote> 
-<div><span class="bold-text">Address:</span> {{place.address}}</div>
+
+ <div class="place-card-text"> 
+         
+<div><h2>Address</h2>
+{{place.address}}</div>
 <br>
-<div><b>Hours:</b> {{place.hours}}</div>
+<div><h2>Hours</h2>
+ {{place.hours}}</div>
 <br>
-<div><span class="bold-text">Description:</span> {{place.description}}</div>
+<div><h2>Description</h2> {{place.description}}</div>
+<br>
+<h3>See what people are saying about</h3>
+<div><a href="/places/{{place.id}}/comment" id="place-to-comment-btn"><button class="btn btn-sm">{{place.name}}</button></a></div>
+</div>
 <br>
 <div><img width="350px" src='{{place.image}}'></div>
 
-<div><a href="/places/{{place.id}}/edit"><button class="btn btn-sm">edit</button></a> <a href="/places/{{place.id}}/delete"><button class="btn btn-sm">delete</button></a></div>
+<div class="place-card-text"><a href="/places/{{place.id}}/edit"><button class="btn btn-sm">edit</button></a> <a href="/places/{{place.id}}/delete"><button class="btn btn-sm">delete</button></a></div>
 
- </blockquote> 
-
-<div><a href="/places/{{place.id}}/comment"><button class="btn btn-sm">{{place.name}}'s comments</button></a></div>
+ 
 </div>
 </div>
 
