@@ -10,12 +10,10 @@
 
 {{#each place}}
     <div class='card1'>
+        <img src='{{this.image}}' style='width:100%'>
         <div class="container">
     <a href="/places/{{this._id}}">{{this.name}}</a>
     <br>
-    <div><img src='{{this.image}}'></div>
-    </br>
-    <br><br>
     <div>Address: {{this.address}}</div>
     <br>
     <div>Hours: {{this.hours}}</div>
