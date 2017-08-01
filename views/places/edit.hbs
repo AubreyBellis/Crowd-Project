@@ -16,20 +16,20 @@
     <div id="login-btn"><a href="#"><button class="btn">log in</button></a><a href="#"><button class="btn">sign up</button></a></div>
 </header>
 
-<h1>Welcome to {{place.name}}</h1>
+    <div class='card1'>
+        <div class="container">
+ <form action="/places/{{place.id}}?_method=PUT" method="POST">
+    <div><input type="text" value="{{place.name}}" name="name"></div>
+    <div><input type="text" value="{{place.address}}" name="address"></div>
+    <div><input type="text" value="{{place.hours}}" name="hours"></div>
+    <div><input type="text" value="{{place.image}}" name="image"></div></div>
+    <div><textarea name="" id="" cols="50" rows="6" style="overflow:auto; resize:none" name="description">{{place.description}}</textarea></div>
+    <div><input type="submit" value="edit place"></div>
+</form> 
 
-<blockquote>{{!-- <div><img src="" alt=""></ima></div> --}}
-<div>Address: {{place.address}}</div>
-<br>
-<div>Hours: {{place.hours}}</div>
-<br>
-<div>Description: {{place.description}}</div>
-<br>
-<div><img src='{{place.image}}'></div>
-</blockquote>
-{{!-- <div>Comments: {{place.comment}}</div> --}}
+</div>
+</div>
 
-<div><a href="/places/{{place.id}}/comment"><button class="btn">{{place.name}}'s comments</button></a></div>
 
 <br>
 <br>

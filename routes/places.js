@@ -90,56 +90,57 @@ router.get('/:id', (req, res) => {
 });
 
 // RENDER EDIT FORM FOR PLACE
-        // router.get('/:id/edit', (req, res) => {
+router.get('/:id/edit', (req, res) => {
 
-        //   const placeIdToFind = req.params.id;
+  const placeIdToFind = req.params.id;
 
-        //   Place.findById(placeIdToFind).then((place) => {
-        //     res.render(
-        //         'place/edit',
-        //         {place},
-        //     );
-        //   }).catch((err) => {
-        //     console.log(`Error rendering edit form for place with ID of ${placeIdToFind}`);
-        //   });
-        // });
+  Place.findById(placeIdToFind).then((place) => {
+    // res.send('edit form');
+    res.render(
+        'places/edit',
+        {place},
+    );
+  }).catch((err) => {
+    console.log(`Error rendering edit form for place with ID of ${placeIdToFind}`);
+  });
+});
 
 
 // PLACE UPDATE ROUTE
-            // router.put('/:id', (req, res) => {
+router.put('/:id', (req, res) => {
 
-            //   const placeIdToUpdate = req.params.id;
-            //   const updatedPlaceInfo = req.body;
+  const placeIdToUpdate = req.params.id;
+  const updatedPlaceInfo = req.body;
 
-            //   Place.findByIdAndUpdate(
-            //       placeIdToUpdate,
-            //       updatedPlacerInfo,
-            //       {new: true} // <-- DON'T FORGET THIS!!!
-            //   ).then((place) => {
-            //     console.log(`Place with ID of ${place._id} updated!`);
+  Place.findByIdAndUpdate(
+      placeIdToUpdate,
+      updatedPlaceInfo,
+      {new: true} 
+  ).then((place) => {
+    console.log(`Place with ID of ${place._id} updated!`);
 
-            //     res.render(
-            //         'places/show',
-            //         {place},
-            //     );
-            //   }).catch((err) => {
-            //     console.log(`Place with ID of ${place._id} failed to update!`);
-            //     console.log(err);
-            //   });
+    res.render(
+        'places/show',
+        {place},
+    );
+  }).catch((err) => {
+    console.log(`Place with ID of ${place._id} failed to update!`);
+    console.log(err);
+  });
 
-            // });
+});
 
 // PLACE DESTROY ROUTE
-      // router.get('/:id/delete', (req, res) => {
+router.get('/:id/delete', (req, res) => {
 
-      //   const placeIdToDelete = req.params.id;
+  const placeIdToDelete = req.params.id;
 
-      //   Place.findByIdAndRemove(placeIdToDelete).then(() => {
-      //     console.log(`Successfully deleted place with ID ${placeIdToDelete}!`);
+  Place.findByIdAndRemove(placeIdToDelete).then(() => {
+    console.log(`Successfully deleted place with ID ${placeIdToDelete}!`);
 
-      //     res.redirect('/places');
-      //   });
-      // });
+    res.redirect('/places');
+  });
+});
 
 
 module.exports = router;

@@ -26,10 +26,13 @@
 <div>Description: {{place.description}}</div>
 <br>
 <div><img src='{{place.image}}'></div>
+
+<div><a href="/places/{{place.id}}/edit"><button class="btn btn-sm">edit</button></a> <a href="/places/{{place.id}}/delete"><button class="btn btn-sm">delete</button></a></div>
+
 </blockquote>
 {{!-- <div>Comments: {{place.comment}}</div> --}}
 
-<div><a href="/places/{{place.id}}/comment"><button class="btn">{{place.name}}'s comments</button></a></div>
+<div><a href="/places/{{place.id}}/comment"><button class="btn btn-sm">{{place.name}}'s comments</button></a></div>
 
 <br>
 <br>
