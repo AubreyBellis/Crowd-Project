@@ -8,7 +8,7 @@ Languages and frameworks used to create this app are HTML, CSS, Javascript (jQue
 • run:" npm run start:dev" in the terminal
 • visit http://localhost:3000
 ## App Objective:
-This app, titled 'Crowded' is designed to allow a user to view a list of places; Ponce City Market, Clermont Lounge, Victory, etc... The user can click on a particular place to view ratings and comments for the place; to make an informed decision on whether they want to patronize the place. They can also create a profile and comment themselves.
+This app, titled 'Crowded' is designed to allow a user to view a list of places; Ponce City Market, Clermont Lounge, Victory, etc... The user can click on a particular place to view ratings and comments for the place; to make an informed decision on whether they want to patronize the place. The goal is to have comments indicate through a range of 1-5 how crowded a place is.They can also create a profile and comment themselves.
 
 This app could also be utilized by businesses to review user's comments and ratings to improve their service. By maintaining an updated listing and high rating, a business could generate more business.
 ## Features:
