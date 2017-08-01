@@ -16,7 +16,7 @@
     </ul>
 </nav>
             {{!-- <a href="/places/{{placeId}}"><div id="back-btn"><button class="btn">Back to {{placeName}}</button></div></a> --}}
-    <div id="login-btn"><button class="btn">log in</button><button class="btn">sign up</button></div>
+    <div id="login-btn"><a href=""><button class="btn">log in</button></a><a href="/users/new"><button class="btn">sign up</button></a></div>
 </header>
 
 
@@ -25,7 +25,7 @@
 <h1>{{placeName}}</h1>
 <br>
 <br>
-<div id="new-comment-btn"><a href="/places/{{placeId}}/comment/new"><button class="btn btn-sm">leave a comment</button></a></div> 
+<div id="add-new-btn"><a href="/places/{{placeId}}/comment/new"><button class="btn btn-sm">leave a comment</button></a></div> 
 
 <div class="main-comment-index">
 {{#each comments}}
