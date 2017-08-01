@@ -1,7 +1,7 @@
 <header class="header">
     {{!-- <h5>{{title}}</h5> --}}
     <div id="back-btn"><a href="/"><button class="btn">Home</button></a></div>
-    <div id="login-btn"><a href="#"><button class="btn">log in</button></a><a href="http://localhost:3000/users"><button class="btn">sign up</button></a></div>
+    <div id="login-btn"><a href="#"><button class="btn">log in</button></a><a href="/users"><button class="btn">sign up</button></a></div>
 </header>
 
 <br>
@@ -12,6 +12,7 @@
 <div class='card1'>
         <div class="container">
 {{#each user}}
+
     <div>
         <div>First Name: {{this.first_name}}</div>
         <div>Last Name: {{this.last_name}}</div>
