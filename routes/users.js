@@ -9,7 +9,7 @@ router.get('/', (request, response) => {
   User.find({}).then((user) => {
     response.render(
         'users/index',
-        { user },
+        { user }
     );
   }).catch((error) => {
     console.log('Error retrieving users from database!');
