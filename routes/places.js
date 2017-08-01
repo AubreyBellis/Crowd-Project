@@ -19,31 +19,34 @@ router.get('/', (req, res) => {
   });
 });
 
-// RENDER THE PLACE CREATE 'NEW' FORM
-        // router.get('/new', (req, res) => {
-        //   res.render('places/new');
-        // });
+// RENDER PLACE CREATE 'NEW' FORM
+router.get('/new', (req, res) => {
+  // res.send('new form');
+  console.log('new place form');
+  res.render('places/new');
+});
 
-// PLACE CREATE ROUTE
-// REMEMBER: if you set the `name=""` attribute of your form
-// inputs to match the schema for your object, you can simply
-// pass the request body into the constructor for your Mongoose
-// object
-        // router.post('/', (req, res) => {
+// PLACE CREATE POST ROUTE
+    // REMEMBER: if you set the `name=""` attribute of your form
+    // inputs to match the schema for your object, you can simply
+    // pass the request body into the constructor for your Mongoose
+    // object
 
-        //   const newPlaceInfoFromForm = req.body;
+router.post('/', (req, res) => {
+console.log('posting new place');
+  const newPlaceInfoFromForm = req.body;
 
-        //   // If the form body already contains everything you need for your user
-        //   // you can just do this:
-        //   Place.create(newPlaceInfoFromForm).then((place) => {
-        //     res.render(
-        //         'places/show',
-        //         {place},
-        //     );
-        //   }).catch((err) => {
-        //     console.log('Error saving new user to database!');
-        //     console.log(err);
-        //   });
+          // If the form body already contains everything you need for your user
+          // you can just do this:
+   Place.create(newPlaceInfoFromForm).then((place) => {
+    res.render(
+         'places/show',
+         {place},
+     );
+   }).catch((err) => {
+     console.log('Error saving new user to database!');
+     console.log(err);
+   });
 
   // OR If you want to add more information to the user before
   // you save, you can use the commented-out code below:
@@ -63,7 +66,7 @@ router.get('/', (req, res) => {
   //         console.log('Error saving new user to database!');
   //         console.log(error);
   //     });
-// });
+});
 
 
 //  PLACE SHOW ROUTE

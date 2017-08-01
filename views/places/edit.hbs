@@ -1,0 +1,41 @@
+<header class="header">
+
+<nav id="primary_nav_wrap">
+    <ul>
+        <li class="current-menu-item"><a href="#"><button class="btn btn-menu">Menu</button></a>
+            <ul>
+                <li class="dir"><a href="/">HOME</a></li>
+                <li class="dir"><a href="/places">PLACE INDEX</a></li>
+                <li class="dir"><a href="/places/">BACK</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+            {{!-- <div id="back-btn"><a href="/places"><button class="btn">Back to Places</button></a></div> --}}
+    <div id="login-btn"><a href="#"><button class="btn">log in</button></a><a href="#"><button class="btn">sign up</button></a></div>
+</header>
+
+<h1>Welcome to {{place.name}}</h1>
+
+<blockquote>{{!-- <div><img src="" alt=""></ima></div> --}}
+<div>Address: {{place.address}}</div>
+<br>
+<div>Hours: {{place.hours}}</div>
+<br>
+<div>Description: {{place.description}}</div>
+<br>
+<div><img src='{{place.image}}'></div>
+</blockquote>
+{{!-- <div>Comments: {{place.comment}}</div> --}}
+
+<div><a href="/places/{{place.id}}/comment"><button class="btn">{{place.name}}'s comments</button></a></div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

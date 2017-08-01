@@ -1,0 +1,39 @@
+<header class="header">
+
+<nav id="primary_nav_wrap">
+    <ul>
+        <li class="current-menu-item"><a href="#"><button class="btn btn-menu">Menu</button></a>
+            <ul>
+                <li class="dir"><a href="/">HOME</a></li>
+                <li class="dir"><a href="/places">PLACE INDEX</a></li>
+                <li class="dir"><a href="/places/">BACK</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+            {{!-- <div id="back-btn"><a href="/places"><button class="btn">Back to Places</button></a></div> --}}
+    <div id="login-btn"><a href="#"><button class="btn">log in</button></a><a href="#"><button class="btn">sign up</button></a></div>
+</header>
+
+
+
+ <form action="/places/{{place.id}}" method="POST">
+    <div><input type="text" placeholder="place name" name="name"></div>
+    <div><input type="text" placeholder="address" name="address"></div>
+    <div><input type="text" placeholder="hours" name="hours"></div>
+    <div><input type="text" placeholder="image URL" name="image"></div></div>
+    <div><textarea name="" id="" cols="50" rows="6" style="overflow:auto; resize:none" placeholder="description here" name="description"></textarea></div>
+    <div><input type="submit" value="add a place"></div>
+</form> 
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
