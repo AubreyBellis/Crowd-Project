@@ -22,23 +22,26 @@
 
 </header>
 
-<h1>Welcome to {{place.name}}</h1>
+<h1>{{place.name}}</h1>
+ <div class='card1'>
+  <div class="container">
 
-<blockquote>{{!-- <div><img src="" alt=""></ima></div> --}}
-<div>Address: {{place.address}}</div>
+  <blockquote> 
+<div><span class="bold-text">Address:</span> {{place.address}}</div>
 <br>
-<div>Hours: {{place.hours}}</div>
+<div><b>Hours:</b> {{place.hours}}</div>
 <br>
-<div>Description: {{place.description}}</div>
+<div><span class="bold-text">Description:</span> {{place.description}}</div>
 <br>
-<div><img src='{{place.image}}'></div>
+<div><img width="350px" src='{{place.image}}'></div>
 
 <div><a href="/places/{{place.id}}/edit"><button class="btn btn-sm">edit</button></a> <a href="/places/{{place.id}}/delete"><button class="btn btn-sm">delete</button></a></div>
 
-</blockquote>
-{{!-- <div>Comments: {{place.comment}}</div> --}}
+ </blockquote> 
 
 <div><a href="/places/{{place.id}}/comment"><button class="btn btn-sm">{{place.name}}'s comments</button></a></div>
+</div>
+</div>
 
 <br>
 <br>
