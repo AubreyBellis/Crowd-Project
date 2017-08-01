@@ -20,7 +20,7 @@
     </ul>
 </nav>
     {{!-- <div id="back-btn"><a href="/places/{{placeId}}/comment"><button class="btn">Back to {{placeName}}'s comments</button></a></div> --}}
-    <div id="login-btn"><a href="#"><button class="btn">log in</button></a><a href="#"><button class="btn">sign up</button></a></div>
+    <div id="login-btn"><a href="#"><button class="btn">log in</button></a><a href="/users/new"><button class="btn">sign up</button></a></div>
 </header>
 
 <div class="main">
@@ -28,7 +28,7 @@
 
 <div class="main-comment-show">
     <div class="card">
-        <span class="comment-rating">{{commentRating}} <i class="fa fa-male" aria-hidden="true"></i></span>
+        <div class="comment-rating">{{commentRating}}</div>
         <div id="comment-title">{{commentTitle}}</div>
         <div>{{commentUserName}}</div>
         {{!-- <div id="comment-created">{{commentCreatedAt}}</div> 
