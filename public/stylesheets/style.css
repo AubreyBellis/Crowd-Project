@@ -28,7 +28,6 @@ body {
     margin: 5px;
     background-color: rgba(17, 155, 102, 0.27);
     text-align: -webkit-center;
-    padding: 2px 5px 2px 10px;
     font-family: 'Stint Ultra Condensed', cursive;
     font-family: 'Open Sans Condensed', sans-serif;
     justify-content: center;
@@ -286,7 +285,7 @@ button.btn.btn-sm {
     min-width: 250px;
     border-radius: 5px;
     margin: 5px;
-    background-color: #edfcfc;  
+    background-color:rgba(17, 155, 102, 0.27);  
     text-align: left;  
     padding: 2px 5px 2px 10px;
     font-family: 'Spectral', serif;
