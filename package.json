@@ -2,7 +2,7 @@
   "name": "crowd-project",
   "version": "0.0.0",
   "private": true,
-  "engine": {
+  "engines": {
     "node": "8.2.1"
   },
   "scripts": {

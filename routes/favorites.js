@@ -27,7 +27,7 @@ router.get('/new', (request, response) => {
 
   response.render(
       'favorites/new',
-      {userId},
+      {userId}
   );
 });
 
@@ -80,7 +80,7 @@ router.get('/:favoritesId', (request, response) => {
           userName: user.first_name,
           favoritesId: foundFavorites._id,
           favoritesName: foundFavorites.name,
-        },
+        }
     );
   }).catch((error) => {
     console.log(`Failed to find favorites`);
@@ -130,7 +130,7 @@ router.put('/:favoritesId', (request, response) => {
           userId: user._id,
           userName: user.first_name,
           favorites: user.favorites,
-        },
+        }
     );
   }).catch((error) => {
     console.log(`Failed to update favorites`);
@@ -158,7 +158,7 @@ router.get('/:favoritesId/delete', (request, response) => {
           userId: user._id,
           userName: user.first_name,
           favorites: user.favorites,
-        },
+        }
     );
   }).catch((error) => {
     console.log(`Failed to delete favorites`);
