@@ -1,7 +1,26 @@
 <header class="header">
+
     {{!-- <h5>{{title}}</h5> --}}
     <div id="back-btn"><a href="/places"><button class="btn">Back to Places</button></a></div>
     <div id="login-btn"><a href="#"><button class="btn">log in</button></a><a href="http://localhost:3000/users"><button class="btn">sign up</button></a></div>
+
+
+
+<nav id="primary_nav_wrap">
+    <ul>
+        <li class="current-menu-item"><a href="#"><button class="btn btn-menu">Menu</button></a>
+            <ul>
+                <li class="dir"><a href="/">HOME</a></li>
+                <li class="dir"><a href="/places">PLACE INDEX</a></li>
+                <li class="dir"><a href="/places/">BACK</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+            {{!-- <div id="back-btn"><a href="/places"><button class="btn">Back to Places</button></a></div> --}}
+    <div id="login-btn"><a href="#"><button class="btn">log in</button></a><a href="#"><button class="btn">sign up</button></a></div>
+
 </header>
 
 <h1>Welcome to {{place.name}}</h1>
@@ -19,19 +38,12 @@
 
 <div><a href="/places/{{place.id}}/comment"><button class="btn">{{place.name}}'s comments</button></a></div>
 
-
-{{!-- FOR FUTURE COMMENTS
-<h2>{{place.name}}'s comments</h2>
-{{#each placeComments}}
-    <div>
-        {{this.name}}
-        <a href="/users/{{../user._id}}/items/{{this._id}}">Show Item</a>
-    </div>
-{{/each}}
- --}}
 <br>
 <br>
-<div>
-    {{!-- <button class="btn"><a href="/places">Back to Places</a></button> --}}
-</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 

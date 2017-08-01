@@ -1,5 +1,4 @@
 <header class="header">
-    {{!-- <h5>{{title}}</h5> --}}
     <div id="back-btn"><a href="/"><button class="btn">Home</button></a></div>
     <div id="login-btn"><a href="#"><button class="btn">log in</button></a><a href="http://localhost:3000/users"><button class="btn">sign up</button></a></div>
 </header>
@@ -11,12 +10,10 @@
 
 {{#each place}}
     <div class='card1'>
+        <img src='{{this.image}}' style='width:100%'>
         <div class="container">
     <a href="/places/{{this._id}}">{{this.name}}</a>
     <br>
-    <div><img src='{{this.image}}'></div>
-    </br>
-    <br><br>
     <div>Address: {{this.address}}</div>
     <br>
     <div>Hours: {{this.hours}}</div>
@@ -26,11 +23,5 @@
     </div>
         </div>
 {{/each}}
-{{!-- <div class="card">
-  <img src="img_avatar.png" alt="Avatar" style="width:100%">
-  <div class="container">
-    <h4><b>John Doe</b></h4> 
-    <p>Architect & Engineer</p> 
-  </div>
-</div> --}}
+<br>
 
