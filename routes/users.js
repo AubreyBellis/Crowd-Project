@@ -9,7 +9,7 @@ router.get('/', (request, response) => {
   User.find({}).then((user) => {
     response.render(
         'users/index',
-        { user },
+        { user }
     );
   }).catch((error) => {
     console.log('Error retrieving users from database!');
@@ -36,7 +36,7 @@ router.post('/', (request, response) => {
   User.create(newUserInfoFromForm).then((user) => {
     response.render(
         'users/show',
-        {user},
+        {user}
     );
   }).catch((error) => {
     console.log('Error saving new user to database!');
@@ -97,7 +97,7 @@ router.put('/:id', (request, response) => {
 
     response.render(
         'users/show',
-        {user},
+        {user}
     );
   }).catch((error) => {
     console.log(`User with ID of ${user._id} failed to update!`);
@@ -126,7 +126,7 @@ router.get('/:id/edit', (request, response) => {
   User.findById(userIdToFind).then((user) => {
     response.render(
         'users/edit',
-        {user},
+        {user}
     );
   }).catch((error) => {
     console.log(`Error rendering edit form for user with ID of ${userIdToFind}`);

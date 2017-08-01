@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
                 placeId: place._id,
                 placeName: place.name,
                 comments: place.comments
-                },
+                }
             );
         }).catch((err) => {
         console.log('Failed to find comment index');
@@ -43,7 +43,7 @@ router.get('/new', (req, res) => {
                 placeId: place._id,
                 placeName: place.name,
                 // comments: place.comments
-                },
+                }
             );
         }).catch((err) => {
         console.log('Failed to find comment index');
@@ -72,7 +72,7 @@ router.post('/', (req, res) => {
             placeId,
             placeName: place.name,
             comments: place.comments
-            },
+            }
         );
     }).catch((err) => {
         console.log(err);
@@ -102,7 +102,7 @@ router.get('/:commentId', (req, res) => {
             commentUpdatedAt: foundComment.updated_at,
             commentRating: foundComment.rating,
             commentText: foundComment.text
-            },
+            }
         );
     }).catch((err) => {
         console.log('Failed to find comment');

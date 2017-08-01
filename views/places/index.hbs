@@ -1,6 +1,6 @@
 <header class="header">
     <div id="back-btn"><a href="/"><button class="btn">Home</button></a></div>
-    <div id="login-btn"><a href="#"><button class="btn">log in</button></a><a href="#"><button class="btn">sign up</button></a></div>
+    <div id="login-btn"><a href="#"><button class="btn">log in</button></a><a href="/users/new"><button class="btn">sign up</button></a></div>
 </header>
 
 <br>
@@ -11,12 +11,10 @@
 
 {{#each place}}
     <div class='card1'>
+        <img src='{{this.image}}' style='width:100%'>
         <div class="container">
     <a href="/places/{{this._id}}">{{this.name}}</a>
     <br>
-    <div><img src='{{this.image}}'></div>
-    </br>
-    <br><br>
     <div>Address: {{this.address}}</div>
     <br>
     <div>Hours: {{this.hours}}</div>
